@@ -1,25 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { BrowserRouter as Router, Switch } from 'react-router-dom';
+
+// Routes
+import routes from './routes';
+
+// Components
+import WithRouter from './components/Layout/components/WithRouter';
+import InitRequests from './components/InitRequests';
+
+// CSS styles
+import 'antd/dist/antd.css';
+import './styles/css/global.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <InitRequests />
+
+      <Suspense fallback="...loading">
+        <Switch>
+          {routes.map((item) => (
+            <WithRouter
+              key={item.path}
+              path={item.path}
+              component={item.component}
+              exact={item.exact}
+            />
+          ))}
+        </Switch>
+      </Suspense>
+    </Router>
   );
 }
 
