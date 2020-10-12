@@ -214,7 +214,7 @@ const PaymentForm = ({ onSubmit, onCancel }) => {
 
       <ActionButtons
         onCancel={onCancel}
-        onSubmit={bindedSubmit}
+        onSubmit={onSubmit}
         submitTitle={BUTTON_COMPLETE_DONATION}
       />
     </Form>

@@ -6,11 +6,14 @@ export const STAGE_1_FORM_SUBTITLE = '4.49 US$ = 1 monthly \nsubscription';
 export const STAGE_1_TITLE = 'donate a subscription a\nfellow galatasaray fan';
 export const STAGE_2_TITLE = 'Your details';
 export const STAGE_2_ANONYMOUS = 'Please keep my donation anonymous';
+export const RESULT_TITLE = 'all done!';
+export const RESULT_SUCCESS_MESSAGE = 'Your gift is received by\ngalatasaray!\nThank you for being a fan!';
 export const NEED_MORE = "Need more? Let's talk!";
 export const PHONE_LABEL = 'Let us know your phone\nnumber or email and we will\ncontact you';
 export const PAYMENT_TITLE = 'Payment';
 
 // Form
+export const BUTTON_AGAIN = 'Donate again';
 export const BUTTON_NEXT = 'Next';
 export const BUTTON_SEND = 'Send';
 export const BUTTON_BACK = 'Back';
@@ -20,7 +23,7 @@ export const PLACEHOLDER_ADDRESS = 'Address';
 export const PLACEHOLDER_NEXT = 'Other amount';
 export const PLACEHOLDER_PHONE = 'Your phone number';
 export const PLACEHOLDER_EMAIL = 'Your email';
-export const PLACEHOLDER_CARD_NUMBER = 'Card number';
+export const PLACEHOLDER_CARD_NUMBER = 'MonthItem number';
 export const PLACEHOLDER_CARD_MONTH = 'MM';
 export const PLACEHOLDER_CARD_YEAR = 'YY';
 export const PLACEHOLDER_CARD_CODE = 'CVV';
@@ -39,6 +42,6 @@ export const LABEL_CHECK_3_TEXT =
 
 // BASIC --------------------------------------
 export const MONTHS = 'Months';
-export const CARD = 'Card';
-export const CARD_INFO = 'Card info';
+export const CARD = 'MonthItem';
+export const CARD_INFO = 'MonthItem info';
 export const CONTACT_ME = 'Contact me';

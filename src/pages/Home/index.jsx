@@ -17,6 +17,8 @@ import { FormWrapper } from '../../styles/UI/form';
 import Payment from './components/Payment';
 import useValidation from '../../components/Form/utils/useValidation';
 import { mustBeFilled, mustBeNumber } from '../../components/Form/utils/validationRules';
+import GoldLabel from '../../components/GoldLabel';
+import Result from '../../components/Form/components/Result';
 
 const initialForm = {
   1: {
@@ -41,6 +43,7 @@ const Home = ({ isMobile, history }) => {
   const handleSetDetails = (detail) => setDetails({ ...details, ...detail });
 
   // const goToPayment = () => history.push(PAYMENT);
+  const goToStart = () => setStage(1);
   const goToNextStage = () => setStage(stage + 1);
   const goToPrevStage = () => setStage(stage - 1);
   const sendQty = () => sendQtyApi().then(goToNextStage);
@@ -50,13 +53,14 @@ const Home = ({ isMobile, history }) => {
       1: goToNextStage,
       2: sendQty,
       3: goToNextStage,
+      4: goToStart,
     };
-
+    
     actions[stage]();
   };
 
   const validation = useValidation(onStageSubmit, initialForm[stage]);
-  const { currentForm, bindedSubmit } = validation;
+  const { currentForm, onClearForm, bindedSubmit } = validation;
 
   console.log(
     '%c::Form',
@@ -88,6 +92,8 @@ const Home = ({ isMobile, history }) => {
         )}
 
         {stage === 3 && <Payment onSubmit={bindedSubmit} onCancel={goToPrevStage} />}
+
+        {stage === 4 && <Result title='from Ultraslan community' date='2 September 2020' beforeSubmit={onClearForm} onSubmit={bindedSubmit}/>}
       </Form>
     </FormWrapper>
   );
