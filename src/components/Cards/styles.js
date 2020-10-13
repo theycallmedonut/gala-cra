@@ -11,16 +11,24 @@ import { GoldLabelWrapper } from '../GoldLabel/styles';
 export const CardsWrapper = styled(Tabs)`
   margin-top: 230px;
   position: relative;
-  //box-shadow: inset 0 0 70px 40px rgba(0, 0, 0, 0.5);
+  margin-bottom: 30px;
 
-  //&:after {
-  //  content: '';
-  //  position: absolute;
-  //  top: -30px;
-  //  left: 0;
-  //  width: 100%;
-  //  height: calc(100% + 30px);
-  //}
+  &:after {
+    content: '';
+    position: absolute;
+    top: -30px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 30px);
+    //box-shadow: inset 0 0 70px 40px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(
+      90deg,
+      #111111 0.04%,
+      rgba(17, 17, 17, 0) 35.39%,
+      rgba(17, 17, 17, 0) 64.48%,
+      #111111 99.96%
+    );
+  }
 
   .ant-row {
     background: linear-gradient(0deg, #979797 -2.35%, rgba(151, 151, 151, 0) 97.83%);
