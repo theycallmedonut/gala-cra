@@ -7,7 +7,8 @@ export const STAGE_1_TITLE = 'donate a subscription a\nfellow galatasaray fan';
 export const STAGE_2_TITLE = 'Your details';
 export const STAGE_2_ANONYMOUS = 'Please keep my donation anonymous';
 export const RESULT_TITLE = 'all done!';
-export const RESULT_SUCCESS_MESSAGE = 'Your gift is received by\ngalatasaray!\nThank you for being a fan!';
+export const RESULT_SUCCESS_MESSAGE =
+  'Your gift is received by\ngalatasaray!\nThank you for being a fan!';
 export const NEED_MORE = "Need more? Let's talk!";
 export const PHONE_LABEL = 'Let us know your phone\nnumber or email and we will\ncontact you';
 export const PAYMENT_TITLE = 'Payment';
@@ -41,7 +42,9 @@ export const LABEL_CHECK_3_TEXT =
   "Galatasaray'ın kampanyalarından ve Galatasaray ile ilgili yeniliklerden email vasıtasıyla haberdar olmak istiyorum.\n";
 
 // BASIC --------------------------------------
+export const MONTH = 'Month';
 export const MONTHS = 'Months';
 export const CARD = 'MonthItem';
 export const CARD_INFO = 'MonthItem info';
+export const PREMIUM_MEMBER = 'Premium member';
 export const CONTACT_ME = 'Contact me';

@@ -2,28 +2,19 @@ import styled, { css } from 'styled-components';
 import { maxWidth, minWidth } from './mixins';
 
 export const Container = styled.div`
-  width: 100%;
+  min-width: 320px;
   max-width: 1200px;
   margin: 0 auto;
   display: ${({ display }) => display || 'flex'};
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
   align-items: ${({ alignItems }) => alignItems || 'flex-start'};
   justify-content: ${({ justifyContent }) => justifyContent || 'flex-start'};
-
-  ${minWidth.phone`
-    padding: 0 48px;
-  `}
-
-  ${maxWidth.phone`
-    padding: 0 20px;
-  `}
 `;
 
 export const PageWrapper = styled.div`
   padding-top: 5px;
   padding-bottom: 15px;
-  background-color: ${({ pageBackgroundColor }) =>
-    pageBackgroundColor || 'transparent'};
+  background-color: ${({ pageBackgroundColor }) => pageBackgroundColor || 'transparent'};
 
   ${minWidth.phone`
     padding-top: 15px;

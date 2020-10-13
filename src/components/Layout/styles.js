@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import { colorBlack } from '../../styles/variables/colors';
 import trophiesMobile from '../../images/trophies-mobile.svg';
+import { Container } from '../../styles/common';
 
-export const LayoutWrapper = styled.div`
+export const LayoutWrapper = styled(Container)`
   position: relative;
 
   &:before {

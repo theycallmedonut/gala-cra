@@ -9,10 +9,8 @@ const LayoutDefault = ({ component: Component, ...props }) => {
     <>
       <CreateHead />
       <Header />
-      <LayoutWrapper>
-        <div id="page-wrapper" className="page-wrapper">
-          <Component {...props} />
-        </div>
+      <LayoutWrapper flexDirection="column" alignItems="center">
+        <Component {...props} />
       </LayoutWrapper>
     </>
   );

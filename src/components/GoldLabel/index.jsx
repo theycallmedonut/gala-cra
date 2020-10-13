@@ -1,9 +1,9 @@
 import React from 'react';
-import {GoldLabelWrapper, GoldLabelTitle, GoldLabelDescription} from './styles';
+import { GoldLabelWrapper, GoldLabelTitle, GoldLabelDescription } from './styles';
 
-const GoldLabel = ({title, date}) => {
+const GoldLabel = ({ className, title, date }) => {
   return (
-    <GoldLabelWrapper>
+    <GoldLabelWrapper className={className}>
       <GoldLabelTitle>{title}</GoldLabelTitle>
       <GoldLabelDescription>{date}</GoldLabelDescription>
     </GoldLabelWrapper>

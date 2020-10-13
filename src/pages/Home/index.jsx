@@ -12,13 +12,12 @@ import { sendQtyApi } from '../../api';
 // Components
 import QtyForm from '../../components/Form/forms/QtyForm';
 import DetailsForm from '../../components/Form/forms/DetailsForm';
-import PaymentForm from '../../components/Form/forms/PaymentForm';
 import { FormWrapper } from '../../styles/UI/form';
 import Payment from './components/Payment';
 import useValidation from '../../components/Form/utils/useValidation';
 import { mustBeFilled, mustBeNumber } from '../../components/Form/utils/validationRules';
-import GoldLabel from '../../components/GoldLabel';
 import Result from '../../components/Form/components/Result';
+import Cards from '../../components/Cards';
 
 const initialForm = {
   1: {
@@ -55,7 +54,7 @@ const Home = ({ isMobile, history }) => {
       3: goToNextStage,
       4: goToStart,
     };
-    
+
     actions[stage]();
   };
 
@@ -69,33 +68,45 @@ const Home = ({ isMobile, history }) => {
   );
 
   return (
-    <FormWrapper direction="column">
-      <Form>
-        {stage === 1 && (
-          <QtyForm
-            title={STAGE_1_TITLE}
-            setDetails={handleSetDetails}
-            goToNextStage={goToNextStage}
-            onSubmit={bindedSubmit}
-            {...validation}
-          />
-        )}
+    <>
+      <FormWrapper direction="column">
+        <Form>
+          {stage === 1 && (
+            <QtyForm
+              title={STAGE_1_TITLE}
+              setDetails={handleSetDetails}
+              goToNextStage={goToNextStage}
+              onSubmit={bindedSubmit}
+              {...validation}
+            />
+          )}
 
-        {stage === 2 && (
-          <DetailsForm
-            title={STAGE_2_TITLE}
-            details={details}
-            setDetails={handleSetDetails}
-            onCancel={goToPrevStage}
-            onSubmit={bindedSubmit}
-          />
-        )}
+          {stage === 2 && (
+            <DetailsForm
+              title={STAGE_2_TITLE}
+              details={details}
+              setDetails={handleSetDetails}
+              onCancel={goToPrevStage}
+              onSubmit={bindedSubmit}
+            />
+          )}
 
-        {stage === 3 && <Payment onSubmit={bindedSubmit} onCancel={goToPrevStage} />}
+          {stage === 3 && <Payment onSubmit={bindedSubmit} onCancel={goToPrevStage} />}
 
-        {stage === 4 && <Result title='from Ultraslan community' date='2 September 2020' beforeSubmit={onClearForm} onSubmit={bindedSubmit}/>}
-      </Form>
-    </FormWrapper>
+          {stage === 4 && (
+            <Result
+              title="from Ultraslan community"
+              date="2 September 2020"
+              beforeSubmit={onClearForm}
+              onSubmit={bindedSubmit}
+            />
+          )}
+        </Form>
+      </FormWrapper>
+
+      {/* label: CARDS */}
+      <Cards />
+    </>
   );
 };
 
