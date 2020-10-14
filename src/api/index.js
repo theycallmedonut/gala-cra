@@ -10,6 +10,8 @@ export const getCardsListApi = () => mockFetch(dummyCardsLists);
 
 export const getTotalMonthsApi = () => mockFetch(127680);
 
-export const sendQtyApi = (data) => mockFetch(data);
+export const sendQtyFormApi = (data) => mockFetch(data);
 
-export const sendContactApi = (data) => mockFetch(data);
+export const sendPaymentFormApi = (data) => mockFetch(data);
+
+export const sendContactFormApi = (data) => mockFetch(data);

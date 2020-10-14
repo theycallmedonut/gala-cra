@@ -7,7 +7,7 @@ import { STAGE_1_TITLE, STAGE_2_TITLE } from '../../constants';
 import { PAYMENT } from '../../config/routePaths';
 
 // Actions
-import { sendContactApi, sendQtyApi } from '../../api';
+import { sendContactFormApi, sendPaymentFormApi, sendQtyFormApi } from '../../api';
 
 // Components
 import QtyForm from '../../components/Form/forms/QtyForm';
@@ -55,11 +55,12 @@ const Home = ({ isMobile, history }) => {
   const goToStart = () => setStage(1);
   const goToNextStage = () => setStage(stage + 1);
   const goToPrevStage = () => setStage(stage - 1);
-  const sendQty = () => sendQtyApi(currentForm).then(goToNextStage);
-  const sendContactForm = () => sendContactApi(currentForm).then(goToNextStage);
+  const sendQty = () => sendQtyFormApi(currentForm).then(goToNextStage);
+  const sendPayment = () => sendPaymentFormApi(currentForm).then(goToNextStage);
+  const sendContactForm = () => sendContactFormApi(currentForm).then(goToNextStage);
   const stagesActions = {
-    1: goToNextStage,
-    2: sendQty,
+    1: sendQty,
+    2: sendPayment,
     3: goToStart,
     4: sendContactForm,
   };
@@ -73,7 +74,6 @@ const Home = ({ isMobile, history }) => {
   console.log(
     '%c::Form',
     'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
-    stage,
     currentForm,
   );
 

@@ -5,7 +5,7 @@ import Input from '../components/Input';
 import { Form, Row, Col } from 'antd';
 import useValidation from '../utils/useValidation';
 import ActionButtons from '../components/ActionButtons';
-import { sendContactApi } from '../../../api';
+import { sendContactFormApi } from '../../../api';
 
 const ContactForm = ({ errors, currentForm, bindedInputFunctions, bindedSubmit, onCancel }) => {
   return (

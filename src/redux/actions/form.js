@@ -1,10 +1,10 @@
 import { FAILURE_FETCH_FORM, FORM_QTY, START_FETCH_FORM, SUCCESS_FETCH_FORM } from '../types';
-import { sendQtyApi } from '../../api';
+import { sendQtyFormApi } from '../../api';
 
 export const fetchQtyFormAction = (formData) => (dispatch) => {
   dispatch({ type: START_FETCH_FORM });
 
-  return sendQtyApi(formData)
+  return sendQtyFormApi(formData)
     .then((payload) =>
       dispatch({
         type: SUCCESS_FETCH_FORM,
