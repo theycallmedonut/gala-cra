@@ -1,16 +1,13 @@
-const mockFetchSuccess = (data) => {
-  return new Promise((resolve, reject) => {
-    resolve({ type: 'SUCCESS', data });
-  });
-};
-const mockFetchFail = (data) => {
-  return new Promise((resolve, reject) => {
-    reject({ type: 'FAILURE', data });
-  });
+import fetchMock from 'fetch-mock';
+import { dummyCardsLists } from './dummyResponse';
+
+const mockFetch = (data, isFail = false) => {
+  console.log('Sent:', data, isFail);
+  return isFail ? Promise.reject({ status: 400 }) : Promise.resolve({ status: 200, body: data });
 };
 
-export const getList = () => mockFetchSuccess();
+export const getListApi = () => mockFetch(dummyCardsLists);
 
-export const sendQtyApi = (data) => mockFetchSuccess(data);
+export const sendQtyApi = (data) => mockFetch(data);
 
-export const sendContactApi = (data) => mockFetchSuccess(data);
+export const sendContactApi = (data) => mockFetch(data);

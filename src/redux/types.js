@@ -1,0 +1,12 @@
+// label: FORM
+export const FORM_QTY = 'qty';
+export const FORM_PAYMENT = 'payment';
+export const FORM_CONTACT = 'contact';
+
+export const START_FETCH_FORM = 'START_FETCH_FORM';
+export const SUCCESS_FETCH_FORM = 'SUCCESS_FETCH_FORM';
+export const FAILURE_FETCH_FORM = 'FAILURE_FETCH_QTY_FORM';
+
+export const START_FETCH_CARDS_LIST = 'START_FETCH_CARDS_LIST';
+export const SUCCESS_FETCH_CARDS_LIST = 'SUCCESS_FETCH_CARDS_LIST';
+export const FAILURE_FETCH_CARDS_LIST = 'FAILURE_FETCH_CARDS_LIST';

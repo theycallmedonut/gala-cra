@@ -11,7 +11,6 @@ import { sendContactApi, sendQtyApi } from '../../api';
 
 // Components
 import QtyForm from '../../components/Form/forms/QtyForm';
-import DetailsForm from '../../components/Form/forms/DetailsForm';
 import { FormWrapper } from '../../styles/UI/form';
 import Payment from './components/Payment';
 import useValidation from '../../components/Form/utils/useValidation';

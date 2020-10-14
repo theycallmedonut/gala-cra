@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
 // Routes
 import routes from './routes';
+import ReduxContainer from './redux/ReduxContainer';
 
 // Components
 import WithRouter from './components/Layout/components/WithRouter';
@@ -14,22 +15,24 @@ import './styles/css/global.css';
 
 function App() {
   return (
-    <Router>
-      <InitRequests />
+    <ReduxContainer>
+      <Router>
+        <InitRequests />
 
-      <Suspense fallback="...loading">
-        <Switch>
-          {routes.map((item) => (
-            <WithRouter
-              key={item.path}
-              path={item.path}
-              component={item.component}
-              exact={item.exact}
-            />
-          ))}
-        </Switch>
-      </Suspense>
-    </Router>
+        <Suspense fallback="...loading">
+          <Switch>
+            {routes.map((item) => (
+              <WithRouter
+                key={item.path}
+                path={item.path}
+                component={item.component}
+                exact={item.exact}
+              />
+            ))}
+          </Switch>
+        </Suspense>
+      </Router>
+    </ReduxContainer>
   );
 }
 

@@ -1,52 +1,21 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Tabs } from 'antd';
 import { CardsWrapper } from './styles';
 import CardsList from './components/CardsList';
+import { getList, getListApi } from '../../api';
+import { connect } from 'react-redux';
+import { fetchCardsAction } from '../../redux/actions/cards';
 
 const { TabPane } = Tabs;
 
-const cardsLists = [
-  {
-    title: 'Most donated',
-    list: [
-      {
-        title: '0from Ultraslan community',
-        date: ' 2 September 2020',
-        qty: 23,
-      },
-      {
-        title: '1from Ultraslan community',
-        date: ' 2 September 2020',
-        qty: 20,
-      },
-      {
-        title: '2from Ultraslan community',
-        date: ' 2 September 2020',
-        qty: 2,
-      },
-      {
-        title: '3from Ultraslan community',
-        date: ' 2 September 2020',
-        qty: 30,
-      },
-    ],
-  },
-  {
-    title: 'Most recent',
-    list: [
-      {
-        title: 'from Ultraslan community',
-        date: ' 2 September 2020',
-        qty: 230,
-      },
-    ],
-  },
-];
+const Cards = ({ getCards, cards }) => {
+  useEffect(() => {
+    getCards();
+  }, []);
 
-const Cards = () => {
   return (
     <CardsWrapper type="card">
-      {cardsLists.map((list) => (
+      {cards.map((list) => (
         <TabPane key={list.title} tab={list.title}>
           <CardsList {...list} />
         </TabPane>
@@ -55,4 +24,12 @@ const Cards = () => {
   );
 };
 
-export default Cards;
+const mapStateToProps = ({ cards }) => ({
+  cards: cards.list,
+});
+
+const mapDispatchToProps = {
+  getCards: fetchCardsAction,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Cards);
