@@ -7,21 +7,7 @@ import useValidation from '../utils/useValidation';
 import ActionButtons from '../components/ActionButtons';
 import { sendContactApi } from '../../../api';
 
-const initialForm = {
-  phone: { value: '', rules: [] },
-  email: { value: '', rules: [] },
-};
-
-const ContactForm = ({ afterSubmitAction, onCancel }) => {
-  const onSubmit = (data) => {
-    sendContactApi(data).then(afterSubmitAction);
-  };
-
-  const { errors, currentForm, bindedSubmit, bindedInputFunctions } = useValidation(
-    onSubmit,
-    initialForm,
-  );
-
+const ContactForm = ({ errors, currentForm, bindedInputFunctions, bindedSubmit, onCancel }) => {
   return (
     <>
       <FormTitle>{PHONE_LABEL}</FormTitle>

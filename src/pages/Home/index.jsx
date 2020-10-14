@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Form } from 'antd';
 
@@ -7,7 +7,7 @@ import { STAGE_1_TITLE, STAGE_2_TITLE } from '../../constants';
 import { PAYMENT } from '../../config/routePaths';
 
 // Actions
-import { sendQtyApi } from '../../api';
+import { sendContactApi, sendQtyApi } from '../../api';
 
 // Components
 import QtyForm from '../../components/Form/forms/QtyForm';
@@ -22,48 +22,59 @@ import Cards from '../../components/Cards';
 const initialForm = {
   1: {
     qty: { value: '', rules: [mustBeFilled, mustBeNumber] },
-  },
-  2: {
     phone: { value: '', rules: [mustBeFilled] },
     name: { value: '', rules: [] },
+    isAnonymous: { value: true, rules: [] },
+  },
+  2: {
+    firstName: { value: '', rules: [mustBeFilled] },
+    lastName: { value: '', rules: [] },
+    cardNumber: { value: '', rules: [] },
+    cardMonth: { value: '', rules: [] },
+    cardYear: { value: '', rules: [] },
+    card: { value: '', rules: [] },
+    email: { value: '', rules: [] },
+    address: { value: '', rules: [] },
+    isResident: { value: true, rules: [] },
+    nationalId: { value: '', rules: [] },
+    check1: { value: true, rules: [] },
+    check2: { value: true, rules: [] },
+    check3: { value: true, rules: [] },
+  },
+  4: {
+    phone: { value: '', rules: [mustBeFilled] },
+    email: { value: '', rules: [] },
   },
 };
 
 const Home = ({ isMobile, history }) => {
   const [stage, setStage] = useState(1);
-  const [details, setDetails] = useState({
-    qty: '',
-    phone: '',
-    email: '',
-    name: '',
-    isAnonymous: true,
-  });
+  const [currentForm, setCurrentForm] = useState({});
 
-  const handleSetDetails = (detail) => setDetails({ ...details, ...detail });
-
-  // const goToPayment = () => history.push(PAYMENT);
+  // Actions:
+  const goToStage = (number) => setStage(number);
   const goToStart = () => setStage(1);
   const goToNextStage = () => setStage(stage + 1);
   const goToPrevStage = () => setStage(stage - 1);
-  const sendQty = () => sendQtyApi().then(goToNextStage);
-
-  const onStageSubmit = () => {
-    const actions = {
-      1: goToNextStage,
-      2: sendQty,
-      3: goToNextStage,
-      4: goToStart,
-    };
-
-    actions[stage]();
+  const sendQty = () => sendQtyApi(currentForm).then(goToNextStage);
+  const sendContactForm = () => sendContactApi(currentForm).then(goToNextStage);
+  const stagesActions = {
+    1: goToNextStage,
+    2: sendQty,
+    3: goToStart,
+    4: sendContactForm,
   };
+  const validation = useValidation(stagesActions[stage], initialForm[stage]);
+  const { onClearForm, bindedSubmit } = validation;
 
-  const validation = useValidation(onStageSubmit, initialForm[stage]);
-  const { currentForm, onClearForm, bindedSubmit } = validation;
+  useEffect(() => {
+    setCurrentForm(validation.currentForm);
+  }, [validation.currentForm]);
 
   console.log(
     '%c::Form',
     'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
+    stage,
     currentForm,
   );
 
@@ -74,26 +85,24 @@ const Home = ({ isMobile, history }) => {
           {stage === 1 && (
             <QtyForm
               title={STAGE_1_TITLE}
-              setDetails={handleSetDetails}
               goToNextStage={goToNextStage}
-              onSubmit={bindedSubmit}
+              goToPrevStage={goToPrevStage}
               {...validation}
             />
           )}
 
-          {stage === 2 && (
-            <DetailsForm
-              title={STAGE_2_TITLE}
-              details={details}
-              setDetails={handleSetDetails}
-              onCancel={goToPrevStage}
+          {(stage === 2 || stage === 4) && (
+            <Payment
               onSubmit={bindedSubmit}
+              stage={stage}
+              goToPrevStage={goToPrevStage}
+              goToNextStage={goToNextStage}
+              goToStage={goToStage}
+              {...validation}
             />
           )}
 
-          {stage === 3 && <Payment onSubmit={bindedSubmit} onCancel={goToPrevStage} />}
-
-          {stage === 4 && (
+          {stage === 3 && (
             <Result
               title="from Ultraslan community"
               date="2 September 2020"

@@ -26,43 +26,45 @@ import Checkbox from '../components/Checkbox';
 import { Form } from 'antd';
 import ActionButtons from '../components/ActionButtons';
 
-const DetailsForm = ({ title, details, setDetails, onSubmit, onCancel }) => {
-  const { qty, isAnonymous, phone, name } = details;
-
-  const handleSetDetails = (detail) => setDetails(detail);
-
+const DetailsForm = ({
+  errors,
+  currentForm,
+  bindedSubmit,
+  bindedInputFunctions,
+  title,
+  onCancel,
+}) => {
   return (
     <>
       <FormTitle>{addLineBreaks(title)}</FormTitle>
-      <Form.Item label="">
+      <Form.Item {...errors.phone} label="">
         <Input
           type="text"
           name="phone"
           placeholder={PLACEHOLDER_PHONE}
-          size="large"
-          // defaultValue={currentForm.phone}
-          // {...bindedInputFunctions}
+          defaultValue={currentForm.phone}
+          {...bindedInputFunctions}
         />
       </Form.Item>
-      <Form.Item label="">
+      <Form.Item {...errors.name} label="">
         <Input
           type="text"
           name="name"
-          defaultValue={name}
           placeholder={PLACEHOLDER_NAME}
-          onChange={handleSetDetails}
+          defaultValue={currentForm.name}
+          {...bindedInputFunctions}
         />
       </Form.Item>
-      <Form.Item label="">
+      <Form.Item {...errors.isAnonymous} label="">
         <Checkbox
           label={STAGE_2_ANONYMOUS}
           name="isAnonymous"
-          defaultChecked={isAnonymous}
-          onChange={setDetails}
+          defaultChecked={currentForm.isAnonymous}
+          {...bindedInputFunctions}
         />
       </Form.Item>
 
-      <ActionButtons onSubmit={onSubmit} submitTitle={BUTTON_SEND} onCancel={onCancel} />
+      <ActionButtons onSubmit={bindedSubmit} submitTitle={BUTTON_SEND} onCancel={onCancel} />
     </>
   );
 };

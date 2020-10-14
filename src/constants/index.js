@@ -44,7 +44,7 @@ export const LABEL_CHECK_3_TEXT =
 // BASIC --------------------------------------
 export const MONTH = 'Month';
 export const MONTHS = 'Months';
-export const CARD = 'MonthItem';
-export const CARD_INFO = 'MonthItem info';
+export const CARD = 'Card';
+export const CARD_INFO = 'Card info';
 export const PREMIUM_MEMBER = 'Premium member';
 export const CONTACT_ME = 'Contact me';

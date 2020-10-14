@@ -9,16 +9,20 @@ import { FormTitle, FormWrapper } from '../../../../styles/UI/form';
 import { TabsItem, TabsWrapper } from '../../../../styles/UI/tabs';
 import ContactForm from '../../../../components/Form/forms/ContactForm';
 
-const Payment = ({ onSubmit, onCancel }) => {
+const Payment = (props) => {
+  const { stage, goToStage } = props;
+
+  const handleChange = (key) => goToStage(Number(key));
+
   return (
     <>
       <FormTitle>{PAYMENT_TITLE}</FormTitle>
-      <TabsWrapper defaultActiveKey="1">
-        <TabsItem tab={CARD} key="1">
-          <PaymentForm onSubmit={onSubmit} onCancel={onCancel} />
+      <TabsWrapper defaultActiveKey={stage} onChange={handleChange}>
+        <TabsItem tab={CARD} key={2}>
+          <PaymentForm {...props} />
         </TabsItem>
-        <TabsItem tab={CONTACT_ME} key="2">
-          <ContactForm />
+        <TabsItem tab={CONTACT_ME} key={4}>
+          <ContactForm {...props} />
         </TabsItem>
       </TabsWrapper>
     </>

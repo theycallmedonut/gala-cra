@@ -15,12 +15,6 @@ const CardsList = ({ title, list }) => {
     return result;
   }, [list]);
 
-  console.log(
-    '%c::',
-    'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
-    columns,
-  );
-
   return (
     <CardsListWrapper tab={title}>
       {columns.map((row, i) => (

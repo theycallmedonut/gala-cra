@@ -19,31 +19,13 @@ import {
   LABEL_CHECK_2_TEXT,
   LABEL_CHECK_3_TEXT,
   BUTTON_COMPLETE_DONATION,
-  BUTTON_BACK,
 } from '../../../constants';
 import Input from '../components/Input';
 import Switch from '../components/Switch';
 import Checkbox from '../components/Checkbox';
 import { Form, Row, Col } from 'antd';
-import useValidation from '../utils/useValidation';
 import { Link } from 'react-router-dom';
 import ActionButtons from '../components/ActionButtons';
-
-const initialForm = {
-  firstName: { value: '', rules: [] },
-  lastName: { value: '', rules: [] },
-  cardNumber: { value: '', rules: [] },
-  cardMonth: { value: '', rules: [] },
-  cardYear: { value: '', rules: [] },
-  card: { value: '', rules: [] },
-  email: { value: '', rules: [] },
-  address: { value: '', rules: [] },
-  isResident: { value: true, rules: [] },
-  nationalId: { value: '', rules: [] },
-  check1: { value: true, rules: [] },
-  check2: { value: true, rules: [] },
-  check3: { value: true, rules: [] },
-};
 
 const Check1Label = () => (
   <>
@@ -58,12 +40,13 @@ const Check2Label = () => (
   </>
 );
 
-const PaymentForm = ({ onSubmit, onCancel }) => {
-  const { errors, currentForm, bindedSubmit, bindedInputFunctions } = useValidation(
-    onSubmit,
-    initialForm,
-  );
-
+const PaymentForm = ({
+  errors,
+  currentForm,
+  bindedSubmit,
+  bindedInputFunctions,
+  goToPrevStage,
+}) => {
   return (
     <Form>
       <FormTitle style={{ textAlign: 'left' }}>{CARD_INFO}</FormTitle>
@@ -213,8 +196,8 @@ const PaymentForm = ({ onSubmit, onCancel }) => {
       </Form.Item>
 
       <ActionButtons
-        onCancel={onCancel}
-        onSubmit={onSubmit}
+        onCancel={goToPrevStage}
+        onSubmit={bindedSubmit}
         submitTitle={BUTTON_COMPLETE_DONATION}
       />
     </Form>

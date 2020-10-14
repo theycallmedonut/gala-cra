@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../components/Button';
 import { FormSubtitle, FormTitle, FormWrapper } from '../../../styles/UI/form';
 import {
@@ -9,6 +9,7 @@ import {
   PLACEHOLDER_NEXT,
   PLACEHOLDER_PHONE,
   STAGE_1_FORM_SUBTITLE,
+  STAGE_2_TITLE,
 } from '../../../constants';
 import FormButtons from '../components/FormButtons';
 import { addLineBreaks } from '../../../utils/string';
@@ -16,12 +17,21 @@ import Input from '../components/Input';
 import ActionButtons from '../components/ActionButtons';
 import ContactForm from './ContactForm';
 import { Form } from 'antd';
+import DetailsForm from './DetailsForm';
 
-const QtyFrom = ({ currentForm, errors, bindedInputFunctions, goToNextStage, onSubmit, title }) => {
+const QtyFrom = (props) => {
+  const { currentForm, errors, bindedInputFunctions, goToNextStage, goToPrevStage, title } = props;
   const { qty } = currentForm;
   const isCustomQty = qty === 'more';
 
-  return (
+  const [isShowDetails, setShowDetails] = useState(false);
+
+  const showDetails = () => setShowDetails(true);
+  const hideDetails = () => setShowDetails(false);
+
+  return isShowDetails ? (
+    <DetailsForm title={STAGE_2_TITLE} onCancel={hideDetails} {...props} />
+  ) : (
     <>
       <FormTitle>{addLineBreaks(title)}</FormTitle>
       <FormSubtitle>{addLineBreaks(STAGE_1_FORM_SUBTITLE)}</FormSubtitle>
@@ -30,9 +40,14 @@ const QtyFrom = ({ currentForm, errors, bindedInputFunctions, goToNextStage, onS
       {!isCustomQty ? (
         <>
           <Form.Item {...errors.qty} label="">
-            <Input name="qty" placeholder={PLACEHOLDER_NEXT} {...bindedInputFunctions} />
+            <Input
+              name="qty"
+              placeholder={PLACEHOLDER_NEXT}
+              value={currentForm.qty}
+              {...bindedInputFunctions}
+            />
           </Form.Item>
-          <ActionButtons onSubmit={onSubmit} submitTitle={BUTTON_NEXT} style={{ margin: 0 }} />
+          <ActionButtons onSubmit={showDetails} submitTitle={BUTTON_NEXT} style={{ margin: 0 }} />
         </>
       ) : (
         <ContactForm afterSubmitAction={goToNextStage} />

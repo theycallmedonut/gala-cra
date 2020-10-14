@@ -10,10 +10,6 @@ import {
 import { MONTH, MONTHS, PREMIUM_MEMBER } from '../../../constants';
 
 const CardsListItem = ({ title, date, qty }) => {
-  console.log('%c::', 'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;', {
-    title,
-    date,
-  });
   return (
     <CardsListItemWrapper>
       <CardWrapper>

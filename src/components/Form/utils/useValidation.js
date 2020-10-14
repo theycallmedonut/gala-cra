@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import * as moment from 'moment';
 
 const TYPE_INPUT = 'input';
@@ -7,6 +7,7 @@ const TYPE_MULTISELECT = 'multiselect';
 const TYPE_CHECKBOX = 'checkbox';
 const TYPE_DATEPICKER = 'datepicker';
 const TYPE_RADIO = 'radio';
+const TYPE_SWITCH = 'switch';
 
 function formToKeyValue(form) {
   const result = {};
@@ -19,14 +20,12 @@ function formToKeyValue(form) {
 }
 
 const useValidation = (submitAction, initialForm = {}, formData = {}) => {
-  const prepareForm = {
-    ...formToKeyValue(initialForm),
-    ...formData,
-  };
-
   // Init form and validation hook
 
-  const [form, setForm] = useState(prepareForm);
+  const [form, setForm] = useState({
+    ...formToKeyValue(initialForm),
+    ...formData,
+  });
   const [errors, setErrors] = useState({});
 
   // Clear form
@@ -163,11 +162,6 @@ const useValidation = (submitAction, initialForm = {}, formData = {}) => {
   };
 
   const onChange = (event, select, isTimeStampFormat) => {
-    console.log(
-      '%c::',
-      'background: #F2561D; color: #fff; border-radius: 5px; padding: 2px 5px;',
-      event,
-    );
     const { name, value, checked, type } = initEvent(event, select, isTimeStampFormat);
     const valuesByType = {
       [TYPE_DATEPICKER]: { name, value },
@@ -217,6 +211,17 @@ const useValidation = (submitAction, initialForm = {}, formData = {}) => {
 
     submitIfValid();
   };
+
+  const prepareForm = useCallback(() => {
+    if (Object.keys(form)[0] === Object.keys(initialForm)[0]) return;
+
+    setForm({
+      ...formToKeyValue(initialForm),
+      ...formData,
+    });
+  }, [initialForm]);
+
+  useEffect(prepareForm, [initialForm]);
 
   return {
     bindedInputFunctions: { onChange, onFocus, onBlur, onKeyDown },

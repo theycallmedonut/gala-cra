@@ -45,7 +45,7 @@ const cardsLists = [
 
 const Cards = () => {
   return (
-    <CardsWrapper defaultActiveTab={cardsLists[0].title} type="card">
+    <CardsWrapper type="card">
       {cardsLists.map((list) => (
         <TabPane key={list.title} tab={list.title}>
           <CardsList {...list} />

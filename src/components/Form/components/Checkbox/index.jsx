@@ -3,7 +3,7 @@ import { CheckboxBlock, CheckboxTitle, CheckboxWrapper } from './styles';
 
 const Checkbox = ({ label, ...props }) => {
   return (
-    <CheckboxBlock {...props}>
+    <CheckboxBlock {...props} className="checkbox">
       <CheckboxTitle>{label}</CheckboxTitle>
     </CheckboxBlock>
   );
