@@ -48,7 +48,7 @@ const PaymentForm = ({
   goToPrevStage,
 }) => {
   return (
-    <Form>
+    <>
       <FormTitle style={{ textAlign: 'left' }}>{CARD_INFO}</FormTitle>
 
       {/* label: PERSON */}
@@ -147,8 +147,7 @@ const PaymentForm = ({
           name="isResident"
           size="large"
           label={LABEL_RESIDENT}
-          placeholder={PLACEHOLDER_NATIONAL_ID}
-          defaultChecked={currentForm.isResident}
+          checked={currentForm.isResident}
           {...bindedInputFunctions}
         />
       </Form.Item>
@@ -200,7 +199,7 @@ const PaymentForm = ({
         onSubmit={bindedSubmit}
         submitTitle={BUTTON_COMPLETE_DONATION}
       />
-    </Form>
+    </>
   );
 };
 

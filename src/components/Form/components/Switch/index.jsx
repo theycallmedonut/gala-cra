@@ -1,13 +1,19 @@
 import React from 'react';
 import { FormSwitch, FormSwitchWrapper } from './styles';
 
-const Button = ({ children, label, ...otherProps }) => {
+const Switch = ({ children, className, name, label, checked, ...otherProps }) => {
+  const { onChange } = otherProps;
+
+  const handleChange = (checked, event) => {
+    onChange({ ...event, target: { ...event.target, checked, name, value: '' } });
+  };
+
   return (
-    <FormSwitchWrapper>
-      <FormSwitch {...otherProps} />
+    <FormSwitchWrapper checked={checked}>
+      <FormSwitch {...otherProps} onClick={() => {}} checked={checked} onChange={handleChange} />
       {label}
     </FormSwitchWrapper>
   );
 };
 
-export default Button;
+export default Switch;

@@ -4,6 +4,7 @@
     <files>
       <node color="3" path="$PROJECT_DIR$/src/components" />
       <node color="4" path="$PROJECT_DIR$/src/pages" />
+      <node color="1" path="$PROJECT_DIR$/src/redux" />
     </files>
     <colors>
       <color name="Color 1" value="#4f060d" enabled="true" />

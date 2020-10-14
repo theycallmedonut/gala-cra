@@ -2,16 +2,15 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Tabs } from 'antd';
 import { CardsWrapper } from './styles';
 import CardsList from './components/CardsList';
-import { getList, getListApi } from '../../api';
 import { connect } from 'react-redux';
-import { fetchCardsAction } from '../../redux/actions/cards';
+import { fetchCardsAction } from '../../redux/actions/basic';
 
 const { TabPane } = Tabs;
 
 const Cards = ({ getCards, cards }) => {
   useEffect(() => {
-    getCards();
-  }, []);
+    if (!cards.length) getCards();
+  }, [cards]);
 
   return (
     <CardsWrapper type="card">
@@ -24,8 +23,8 @@ const Cards = ({ getCards, cards }) => {
   );
 };
 
-const mapStateToProps = ({ cards }) => ({
-  cards: cards.list,
+const mapStateToProps = ({ basic }) => ({
+  cards: basic.cards,
 });
 
 const mapDispatchToProps = {
