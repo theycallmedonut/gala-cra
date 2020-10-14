@@ -5,6 +5,7 @@ import {
   START_FETCH_TOTAL_MONTHS,
   SUCCESS_FETCH_CARDS_LIST,
   SUCCESS_FETCH_TOTAL_MONTHS,
+  SUCCESS_SET_QTY,
 } from '../types';
 import { getTotalMonthsApi, getCardsListApi } from '../../api';
 
@@ -50,4 +51,8 @@ export const fetchTotalMonthsAction = (formData) => (dispatch) => {
         },
       }),
     );
+};
+
+export const setQtyAction = ({ qty }) => (dispatch) => {
+  dispatch({ type: SUCCESS_SET_QTY, payload: qty });
 };

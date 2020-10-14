@@ -17,7 +17,7 @@ const Payment = (props) => {
   return (
     <>
       <FormTitle>{PAYMENT_TITLE}</FormTitle>
-      <TabsWrapper defaultActiveKey={stage} onChange={handleChange}>
+      <TabsWrapper defaultActiveKey={stage} onChange={handleChange} style={{ marginTop: '30px' }}>
         <TabsItem tab={CARD} key={2}>
           <PaymentForm {...props} />
         </TabsItem>

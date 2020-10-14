@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { memo, useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Form } from 'antd';
 
@@ -17,6 +17,7 @@ import useValidation from '../../components/Form/utils/useValidation';
 import { mustBeFilled, mustBeNumber } from '../../components/Form/utils/validationRules';
 import Result from '../../components/Form/components/Result';
 import Cards from '../../components/Cards';
+import { connect } from 'react-redux';
 
 const initialForm = {
   1: {
@@ -46,7 +47,7 @@ const initialForm = {
   },
 };
 
-const Home = ({ isMobile, history }) => {
+const Home = ({ isMobile, history, qty }) => {
   const [stage, setStage] = useState(1);
   const [currentForm, setCurrentForm] = useState({});
 
@@ -57,7 +58,7 @@ const Home = ({ isMobile, history }) => {
   const goToPrevStage = () => setStage(stage - 1);
   const sendQty = () => sendQtyFormApi(currentForm).then(goToNextStage);
   const sendPayment = () => sendPaymentFormApi(currentForm).then(goToNextStage);
-  const sendContactForm = () => sendContactFormApi(currentForm).then(goToNextStage);
+  const sendContactForm = () => sendContactFormApi(currentForm).then(goToPrevStage);
   const stagesActions = {
     1: sendQty,
     2: sendPayment,
@@ -79,7 +80,11 @@ const Home = ({ isMobile, history }) => {
 
   return (
     <>
-      <FormWrapper direction="column">
+      <FormWrapper
+        direction="column"
+        qty={qty}
+        className={`form-qty form-qty--${qty} form-stage--${stage}`}
+      >
         <Form>
           {stage === 1 && (
             <QtyForm
@@ -118,4 +123,8 @@ const Home = ({ isMobile, history }) => {
   );
 };
 
-export default withRouter(Home);
+const mapStateToProps = ({ basic }) => ({
+  qty: basic.qty,
+});
+
+export default memo(connect(mapStateToProps, {})(withRouter(Home)));

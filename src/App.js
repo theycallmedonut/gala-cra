@@ -12,6 +12,7 @@ import InitRequests from './components/InitRequests';
 // CSS styles
 import 'antd/dist/antd.css';
 import './styles/css/global.css';
+import './styles/css/forms.css';
 
 function App() {
   return (

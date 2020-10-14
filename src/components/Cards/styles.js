@@ -4,7 +4,7 @@ import { colorBlackLight, colorRed, colorWhite } from '../../styles/variables/co
 import { secondaryFont } from '../../styles/variables/fonts';
 import { minWidth } from '../../styles/mixins';
 
-import cardBg from '../../images/card-bg.jpg';
+import cardBgXs from '../../images/card-bg-xs.png';
 import GoldLabel from '../GoldLabel';
 import { GoldLabelWrapper } from '../GoldLabel/styles';
 
@@ -108,19 +108,10 @@ export const CardsListItemWrapper = styled.div`
 export const CardWrapper = styled.div`
   position: relative;
   margin-bottom: 10px;
-  margin-top: 40px;
+  margin-top: 42px;
   width: 155px;
   height: 100px;
-  background: linear-gradient(
-      298.18deg,
-      rgba(196, 141, 7, 0.46) 20.7%,
-      rgba(191, 141, 37, 0.05) 76.48%
-    ),
-    linear-gradient(180.21deg, rgba(255, 255, 255, 0.33) 0.18%, #c48d07 99.82%), #c48d07;
-  border-radius: 5px;
-  background-blend-mode: normal, screen, normal;
-  overflow-y: hidden;
-  overflow-x: hidden;
+  background: url(${cardBgXs}) center center no-repeat;
 `;
 
 export const CardType = styled.div`
@@ -131,6 +122,7 @@ export const CardType = styled.div`
   font-weight: bold;
   font-size: 11px;
   margin: 5px 8px 0 0;
+  padding-top: 5px;
 `;
 
 export const CardQty = styled.div`

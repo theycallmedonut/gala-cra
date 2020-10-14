@@ -22,10 +22,13 @@ export const FormWrapper = styled.div`
   padding: 20px 20px 90px;
   width: 320px;
   box-sizing: border-box;
-  border-radius: 20px;
-  overflow:hidden;
-  background: linear-gradient(132.93deg, #C48D07 30.27%, #AB8417 100%);
-  mix-blend-mode: normal;
+  //border-radius: 20px;
+  //overflow:hidden;
+  //background: linear-gradient(132.93deg, #C48D07 30.27%, #AB8417 100%);
+  //background-size: cover;
+  //mix-blend-mode: normal;
+  //overflow-x:visible;
+  //overflow-y:visible;
   
   .ant-form {
     width: 100%;
@@ -34,30 +37,18 @@ export const FormWrapper = styled.div`
     margin-bottom: 12px;
   }
   
-  &:before {
-    content: '';
-    display:block;
-    position:absolute;
-    z-index: 0;
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-blend-mode: normal;
-    
-    background: url('${cardBg}') left center/100% 100% no-repeat, linear-gradient(298.18deg, rgba(196, 141, 7, 0.46) 20.7%, rgba(191, 141, 37, 0.05) 76.48%), linear-gradient(180.21deg, rgba(255, 255, 255, 0.33) 0.18%, #C48D07 99.82%), #C48D07;
-  }
   
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    width: 45px;
-    height: 60px;
-    background: url('${logo}') center center/60px auto no-repeat;
-  }
+  
+  
+  // &:after {
+  //   content: '';
+  //   position: absolute;
+  //   bottom: 20px;
+  //   right: 20px;
+  //   width: 45px;
+  //   height: 60px;
+  //   background: url('${logo}') center center/60px auto no-repeat;
+  // }
 
   > * {
     position:relative;

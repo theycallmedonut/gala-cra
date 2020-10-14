@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Button from '../components/Button';
 import { FormSubtitle, FormTitle, FormWrapper } from '../../../styles/UI/form';
 import {
@@ -18,9 +18,20 @@ import ActionButtons from '../components/ActionButtons';
 import ContactForm from './ContactForm';
 import { Form } from 'antd';
 import DetailsForm from './DetailsForm';
+import { setQtyAction } from '../../../redux/actions/basic';
+import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 
 const QtyFrom = (props) => {
-  const { currentForm, errors, bindedInputFunctions, goToNextStage, goToPrevStage, title } = props;
+  const {
+    currentForm,
+    errors,
+    bindedInputFunctions,
+    goToNextStage,
+    goToPrevStage,
+    title,
+    setQty,
+  } = props;
   const { qty } = currentForm;
   const isCustomQty = qty === 'more';
 
@@ -28,6 +39,8 @@ const QtyFrom = (props) => {
 
   const showDetails = () => setShowDetails(true);
   const hideDetails = () => setShowDetails(false);
+
+  useEffect(() => setQty({ qty }), [qty]);
 
   return isShowDetails ? (
     <DetailsForm title={STAGE_2_TITLE} onCancel={hideDetails} {...props} />
@@ -50,7 +63,7 @@ const QtyFrom = (props) => {
           <ActionButtons onSubmit={showDetails} submitTitle={BUTTON_NEXT} style={{ margin: 0 }} />
         </>
       ) : (
-        <ContactForm afterSubmitAction={goToNextStage} />
+        <ContactForm afterSubmitAction={goToNextStage} {...props} />
       )}
     </>
   );
@@ -58,4 +71,10 @@ const QtyFrom = (props) => {
 
 QtyFrom.propTypes = {};
 
-export default QtyFrom;
+const mapStateToProps = (state) => ({});
+
+const mapDispatchToProps = {
+  setQty: setQtyAction,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(QtyFrom);

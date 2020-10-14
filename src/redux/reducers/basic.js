@@ -3,11 +3,13 @@ import {
   START_FETCH_CARDS_LIST,
   SUCCESS_FETCH_CARDS_LIST,
   SUCCESS_FETCH_TOTAL_MONTHS,
+  SUCCESS_SET_QTY,
 } from '../types';
 
 const initialState = {
   totalMonths: '',
   cards: [],
+  qty: 0,
 };
 
 export default function basic(state = initialState, action = {}) {
@@ -22,6 +24,12 @@ export default function basic(state = initialState, action = {}) {
       return {
         ...state,
         totalMonths: action.payload,
+      };
+
+    case SUCCESS_SET_QTY:
+      return {
+        ...state,
+        qty: action.payload,
       };
 
     default:

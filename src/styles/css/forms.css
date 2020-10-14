@@ -1,0 +1,59 @@
+.form-qty:before {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: -20px;
+  width: 360px;
+  height: 1200px;
+  background-blend-mode: normal;
+  background-position: center -20px;
+  background-repeat: no-repeat;
+}
+.form-qty--5:before {
+  background-image: url('../../images/bg-cards-5.png');
+}
+.form-qty--10:before {
+  background-image: url('../../images/bg-cards-10.png');
+}
+.form-qty--100:before {
+  background-image: url('../../images/bg-cards-100.png');
+}
+
+.form-qty:after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: -20px;
+  width: 360px;
+  height: 1200px;
+  background-blend-mode: normal;
+  background-position: center -20px;
+  background-repeat: no-repeat;
+  background-image: url('../../images/bg-cards-1.png');
+}
+
+.form-stage--1.form-qty--:after {
+  background-image: url('../../images/bg-cards-1.png');
+}
+.form-stage--1:after {
+  background-image: url('../../images/bg-cards-1.png');
+}
+.form-stage--1.form-qty--more:after {
+  background-image: url('../../images/bg-stage-1b.png');
+}
+.form-stage--2 {
+  margin-bottom: -100px;
+}
+.form-stage--2:after {
+  background-image: url('../../images/bg-stage-2.png');
+}
+.form-stage--3:after {
+  background-image: url('../../images/bg-stage-3.png');
+}
+.form-stage--4:after {
+  background-image: url('../../images/bg-stage-4.png');
+}
