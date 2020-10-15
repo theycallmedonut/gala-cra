@@ -1,14 +1,23 @@
 import React, { useCallback, useEffect } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Header from '../Header';
 import { LayoutWrapper } from './styles';
 import { CreateHead } from '../Head/helper';
-import { connect } from 'react-redux';
 import { isMobileDevice } from '../../utils/layout';
 import { setIsMobileAction } from '../../redux/actions/basic';
+import { preloadImages } from './helpers/preloadImages';
 
 const LayoutDefault = ({ setIsMobile, isMobile, component: Component, ...props }) => {
   const handleSetIsMobile = useCallback(() => setIsMobile(isMobileDevice()), [setIsMobile]);
+
+  const handlePreloadImages = useCallback(() => {
+    if (isMobile === null) return;
+
+    preloadImages({ isMobile });
+  }, [isMobile]);
+
+  useEffect(handlePreloadImages, [isMobile]);
 
   useEffect(() => {
     if (isMobile === null) handleSetIsMobile();

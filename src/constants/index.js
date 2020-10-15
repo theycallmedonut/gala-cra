@@ -2,13 +2,13 @@ export const HEADER_TITLE = 'Galatasaray\nSUBSCRIPTION on the\nshelf';
 export const HEADER_MONTHS_DONATED = 'Months donated';
 
 // Pages
-export const STAGE_1_FORM_SUBTITLE = '4.49 US$ = 1 monthly \nsubscription';
-export const STAGE_1_TITLE = 'donate a subscription a\nfellow galatasaray fan';
+export const STAGE_1_FORM_SUBTITLE = '4.49 US$ = 1 monthly subscription';
+export const STAGE_1_TITLE = 'donate a subscription a fellow galatasaray fan';
 export const STAGE_2_TITLE = 'Your details';
 export const STAGE_2_ANONYMOUS = 'Please keep my donation anonymous';
 export const RESULT_TITLE = 'all done!';
 export const RESULT_SUCCESS_MESSAGE =
-  'Your gift is received by\ngalatasaray!\nThank you for being a fan!';
+  'Your gift is received by galatasaray!\nThank you for being a fan!';
 export const NEED_MORE = "Need more? Let's talk!";
 export const PHONE_LABEL = 'Let us know your phone\nnumber or email and we will\ncontact you';
 export const PAYMENT_TITLE = 'Payment';

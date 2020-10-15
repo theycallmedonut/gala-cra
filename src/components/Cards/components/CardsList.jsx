@@ -1,11 +1,23 @@
 import React, { useCallback, useMemo, useState } from 'react';
-import { CardsListWrapper } from '../styles';
-import CardsListItem from './CardsListItem';
 import { Col, Row } from 'antd';
+import { connect } from 'react-redux';
 
-const CardsList = ({ title, list }) => {
+// Styles
+import { CardsListWrapper } from '../styles';
+
+// Components
+import CardsListItem from './CardsListItem';
+
+const CardsList = ({ title, list, isMobile }) => {
+  const getChunk = useCallback(() => {
+    const containerWidth = window.innerWidth - 30;
+    const itemWidth = isMobile ? 156 + 10 : 180 + 10;
+
+    return Math.floor(containerWidth / itemWidth);
+  }, [isMobile, window.innerWidth]);
+
   const columns = useMemo(() => {
-    let chunk = 2;
+    const chunk = getChunk();
     const result = [];
 
     for (let i = 0, j = list.length; i < j; i += chunk) {
@@ -13,14 +25,14 @@ const CardsList = ({ title, list }) => {
     }
 
     return result;
-  }, [list]);
+  }, [list, isMobile]);
 
   return (
     <CardsListWrapper tab={title}>
       {columns.map((row, i) => (
         <Row key={i} gutter={10}>
-          {row.map((card) => (
-            <Col key={card.title}>
+          {row.map((card, i2) => (
+            <Col key={i2}>
               <CardsListItem {...card} />
             </Col>
           ))}
@@ -30,4 +42,10 @@ const CardsList = ({ title, list }) => {
   );
 };
 
-export default CardsList;
+const mapStateToProps = ({ basic }) => ({
+  isMobile: basic.isMobile,
+});
+
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CardsList);

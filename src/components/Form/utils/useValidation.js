@@ -229,6 +229,7 @@ const useValidation = (submitAction, initialForm = {}, formData = {}) => {
     onClearForm,
     errors,
     currentForm: form,
+    formLength: Object.keys(form).length,
   };
 };
 

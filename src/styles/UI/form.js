@@ -1,10 +1,7 @@
 import styled, { css } from 'styled-components';
 import logo from '../../images/logo.svg';
-import cardBg from '../../images/card-bg.jpg';
-import Input from '../../components/Form/components/Input';
-import Index from '../../components/Form/components/Button';
-import { colorBlack, colorBlackLight, colorRed, colorWhite } from '../variables/colors';
 import { primaryFont } from '../variables/fonts';
+import { minWidth, maxWidth } from '../mixins';
 
 const textStyles = css`
   line-height: 1.2;
@@ -16,19 +13,19 @@ export const FormWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: ${({ direction }) => direction || 'row'};
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0 auto 20px;
-  padding: 20px 20px 90px;
-  width: 320px;
+  padding: 48px 20px 90px;
   box-sizing: border-box;
-  //border-radius: 20px;
-  //overflow:hidden;
-  //background: linear-gradient(132.93deg, #C48D07 30.27%, #AB8417 100%);
-  //background-size: cover;
-  //mix-blend-mode: normal;
-  //overflow-x:visible;
-  //overflow-y:visible;
+  min-height: 530px;
+  
+  ${maxWidth.tablet`
+    width: 320px;
+  `}
+  ${minWidth.tablet`
+    width: 460px;
+  `}
   
   .ant-form {
     width: 100%;
@@ -60,13 +57,16 @@ export const FormWrapper = styled.div`
 export const FormTitle = styled.div`
   ${textStyles};
   font-size: 20px;
-  margin-bottom: 10px;
-  width: 100%;
+  margin: 0 auto 10px;
+  width: 230px;
+
+  ${minWidth.tablet`
+    width: calc(100% + 60px);
+    margin: 0 -30px 10px;
+  `};
 `;
 
-export const FormSubtitle = styled.div`
-  ${textStyles};
-  font-size: 20px;
+export const FormSubtitle = styled(FormTitle)`
   font-weight: bold;
-  width: 100%;
+  margin-bottom: 0;
 `;

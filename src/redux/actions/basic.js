@@ -5,6 +5,7 @@ import {
   START_FETCH_TOTAL_MONTHS,
   SUCCESS_FETCH_CARDS_LIST,
   SUCCESS_FETCH_TOTAL_MONTHS,
+  SUCCESS_SET_IS_DETAILS_STAGE,
   SUCCESS_SET_IS_MOBILE,
   SUCCESS_SET_QTY,
 } from '../types';
@@ -60,4 +61,8 @@ export const setQtyAction = ({ qty }) => (dispatch) => {
 
 export const setIsMobileAction = (isMobile) => (dispatch) => {
   dispatch({ type: SUCCESS_SET_IS_MOBILE, payload: isMobile });
+};
+
+export const setIsDetailsStageAction = (isDetailsStage) => (dispatch) => {
+  dispatch({ type: SUCCESS_SET_IS_DETAILS_STAGE, payload: isDetailsStage });
 };

@@ -4,14 +4,16 @@ import { colorBlackLight, colorRed, colorWhite } from '../../styles/variables/co
 import { secondaryFont } from '../../styles/variables/fonts';
 import { minWidth } from '../../styles/mixins';
 
-import cardBgXs from '../../images/card-bg-xs.png';
+import cardBgXs from '../../images/cards/mobile/card-bg-xs.png';
 import GoldLabel from '../GoldLabel';
-import { GoldLabelWrapper } from '../GoldLabel/styles';
 
 export const CardsWrapper = styled(Tabs)`
-  margin-top: 230px;
   position: relative;
-  margin-bottom: 30px;
+  margin: 30px auto;
+
+  ${minWidth.desktop`
+    margin-top: 50px;
+  `};
 
   .ant-row {
     background: linear-gradient(0deg, #979797 -2.35%, rgba(151, 151, 151, 0) 97.83%);

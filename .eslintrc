@@ -1,28 +1,44 @@
 {
-  "env": {
-    "browser": true,
-    "es6": true
+  "extends": ["airbnb", "prettier", "prettier/react"],
+  "plugins": ["prettier"],
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [".js", ".jsx"]
+      }
+    ],
+    "indent": [0, 2, { "SwitchCase": 1 }],
+    "react/jsx-indent": ["warn", 2],
+    "react/require-default-props": "off",
+    "quotes": ["error", "single"],
+    "react/prop-types": 0,
+    "react/destructuring-assignment": "off",
+    "no-underscore-dangle": 0,
+    "import/imports-first": ["error", "absolute-first"],
+    "import/newline-after-import": "error",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "newline-per-chained-call": ["warn", { "ignoreChainWithDepth": 2 }]
+    // "react/jsx-one-expression-per-line": ["error", { "allow": "literal" }]
+    // "react/jsx-one-expression-per-line": "error"
   },
-  "extends": ["plugin:react/recommended", "airbnb", "prettier"],
   "globals": {
-    "Atomics": "readonly",
-    "SharedArrayBuffer": "readonly"
+    "window": true,
+    "document": true,
+    "localStorage": true,
+    "FormData": true,
+    "FileReader": true,
+    "Blob": true,
+    "navigator": true
   },
   "parser": "babel-eslint",
-  "parserOptions": {
-    "ecmaFeatures": {
-      "jsx": true
-    },
-    "ecmaVersion": 2018,
-    "sourceType": "module"
-  },
-  "plugins": ["react", "prettier", "react-hooks"],
-  "rules": {
-    "prettier/prettier": ["error"],
-    "max-len": ["error", { "code": 100 }],
-    "react/jsx-filename-extension": ["off"],
-    "react/jsx-props-no-spreading": ["off"],
-    "react/no-array-index-key": ["off"],
-    "react/forbid-prop-types": ["off"]
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx"]
+      }
+    }
   }
 }

@@ -1,23 +1,23 @@
 import React, { memo, useEffect, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import { Form } from 'antd';
+import { connect } from 'react-redux';
 
 // Constants
-import { STAGE_1_TITLE, STAGE_2_TITLE } from '../../constants';
-import { PAYMENT } from '../../config/routePaths';
+import { STAGE_1_TITLE } from '../../constants';
 
 // Actions
 import { sendContactFormApi, sendPaymentFormApi, sendQtyFormApi } from '../../api';
 
 // Components
-import QtyForm from '../../components/Form/forms/QtyForm';
 import { FormWrapper } from '../../styles/UI/form';
+import QtyForm from '../../components/Form/forms/QtyForm';
 import Payment from './components/Payment';
 import useValidation from '../../components/Form/utils/useValidation';
 import { mustBeFilled, mustBeNumber } from '../../components/Form/utils/validationRules';
 import Result from '../../components/Form/components/Result';
 import Cards from '../../components/Cards';
-import { connect } from 'react-redux';
+import { setIsDetailsStageAction } from '../../redux/actions/basic';
 
 const initialForm = {
   1: {
@@ -47,7 +47,7 @@ const initialForm = {
   },
 };
 
-const Home = ({ isMobile, history, qty }) => {
+const Home = ({ qty, isMobile, isDetailsStage, setIsDetailsStage }) => {
   const [stage, setStage] = useState(1);
   const [currentForm, setCurrentForm] = useState({});
 
@@ -65,8 +65,14 @@ const Home = ({ isMobile, history, qty }) => {
     3: goToStart,
     4: sendContactForm,
   };
+
   const validation = useValidation(stagesActions[stage], initialForm[stage]);
   const { onClearForm, bindedSubmit } = validation;
+
+  const restartDonation = () => {
+    onClearForm();
+    setIsDetailsStage(false);
+  };
 
   useEffect(() => {
     setCurrentForm(validation.currentForm);
@@ -83,7 +89,9 @@ const Home = ({ isMobile, history, qty }) => {
       <FormWrapper
         direction="column"
         qty={qty}
-        className={`form-qty form-qty--${qty} form-stage--${stage}`}
+        className={`form-qty form-qty--${
+          isMobile ? 'mobile' : 'desktop'
+        } form-qty--${qty} form-stage--${stage} ${isDetailsStage && 'form-details'}`}
       >
         <Form>
           {stage === 1 && (
@@ -110,7 +118,7 @@ const Home = ({ isMobile, history, qty }) => {
             <Result
               title="from Ultraslan community"
               date="2 September 2020"
-              beforeSubmit={onClearForm}
+              beforeSubmit={restartDonation}
               onSubmit={bindedSubmit}
             />
           )}
@@ -125,6 +133,12 @@ const Home = ({ isMobile, history, qty }) => {
 
 const mapStateToProps = ({ basic }) => ({
   qty: basic.qty,
+  isMobile: basic.isMobile,
+  isDetailsStage: basic.isDetailsStage,
 });
 
-export default memo(connect(mapStateToProps, {})(withRouter(Home)));
+const mapDispatchToProps = {
+  setIsDetailsStage: setIsDetailsStageAction,
+};
+
+export default memo(connect(mapStateToProps, mapDispatchToProps)(withRouter(Home)));

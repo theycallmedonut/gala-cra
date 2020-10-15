@@ -24,7 +24,7 @@ const Result = ({ title, date, onSubmit, beforeSubmit }) => {
   return (
     <>
       <ResultTitle>{RESULT_TITLE}</ResultTitle>
-      <GoldLabel title={title} date={date} />
+      <GoldLabel title={title} date={date} style={{ margin: '0 auto' }} />
       <ResultMessage>{addLineBreaks(RESULT_SUCCESS_MESSAGE)}</ResultMessage>
       <ActionButtons onSubmit={handleSubmit} submitTitle={BUTTON_AGAIN} />
     </>

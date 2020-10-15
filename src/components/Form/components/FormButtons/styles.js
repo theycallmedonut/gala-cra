@@ -1,10 +1,16 @@
 import styled from 'styled-components';
 import { colorBlack, colorRed, colorWhite } from '../../../../styles/variables/colors';
+import { minWidth } from '../../../../styles/mixins';
 
 export const FormButtonsWrapper = styled.div`
   display: flex;
   flex-flow: wrap;
   padding: 18px 36px;
+
+  ${minWidth.tablet`
+    padding-right: 0;
+    padding-left: 0;
+  `}
 `;
 
 export const FormButtonsItemWrapper = styled.div`

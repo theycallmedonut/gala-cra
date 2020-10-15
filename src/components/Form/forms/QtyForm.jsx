@@ -1,13 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Button from '../components/Button';
-import { FormSubtitle, FormTitle, FormWrapper } from '../../../styles/UI/form';
+import React, { useCallback, useEffect, useState } from 'react';
+import { Form } from 'antd';
+import { connect } from 'react-redux';
+
+import { FormSubtitle, FormTitle } from '../../../styles/UI/form';
 import {
   BUTTON_NEXT,
-  BUTTON_SEND,
-  PHONE_LABEL,
-  PLACEHOLDER_EMAIL,
   PLACEHOLDER_NEXT,
-  PLACEHOLDER_PHONE,
   STAGE_1_FORM_SUBTITLE,
   STAGE_2_TITLE,
 } from '../../../constants';
@@ -16,33 +14,32 @@ import { addLineBreaks } from '../../../utils/string';
 import Input from '../components/Input';
 import ActionButtons from '../components/ActionButtons';
 import ContactForm from './ContactForm';
-import { Form } from 'antd';
 import DetailsForm from './DetailsForm';
-import { setQtyAction } from '../../../redux/actions/basic';
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
+import { setIsDetailsStageAction, setQtyAction } from '../../../redux/actions/basic';
 
 const QtyFrom = (props) => {
   const {
+    bindedInputFunctions,
+    setIsDetailsStage,
+    goToNextStage,
+    isDetailsStage,
     currentForm,
     errors,
-    bindedInputFunctions,
-    goToNextStage,
-    goToPrevStage,
-    title,
     setQty,
+    title,
   } = props;
   const { qty } = currentForm;
   const isCustomQty = qty === 'more';
 
-  const [isShowDetails, setShowDetails] = useState(false);
+  const showDetails = () => setIsDetailsStage(true);
+  const hideDetails = () => setIsDetailsStage(false);
+  const handleSetQty = useCallback(() => {
+    setQty({ qty });
+  }, [qty]);
 
-  const showDetails = () => setShowDetails(true);
-  const hideDetails = () => setShowDetails(false);
+  useEffect(handleSetQty, [qty]);
 
-  useEffect(() => setQty({ qty }), [qty]);
-
-  return isShowDetails ? (
+  return isDetailsStage ? (
     <DetailsForm title={STAGE_2_TITLE} onCancel={hideDetails} {...props} />
   ) : (
     <>
@@ -71,10 +68,13 @@ const QtyFrom = (props) => {
 
 QtyFrom.propTypes = {};
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = ({ basic }) => ({
+  isDetailsStage: basic.isDetailsStage,
+});
 
 const mapDispatchToProps = {
   setQty: setQtyAction,
+  setIsDetailsStage: setIsDetailsStageAction,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(QtyFrom);
