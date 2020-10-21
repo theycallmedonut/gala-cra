@@ -1,0 +1,39 @@
+{
+  "files": {
+    "static/js/0.6069e8d7.chunk.js": "/static/js/0.6069e8d7.chunk.js",
+    "static/js/0.6069e8d7.chunk.js.map": "/static/js/0.6069e8d7.chunk.js.map",
+    "static/js/1.5f5e546b.chunk.js": "/static/js/1.5f5e546b.chunk.js",
+    "static/js/1.5f5e546b.chunk.js.map": "/static/js/1.5f5e546b.chunk.js.map",
+    "main.css": "/static/css/main.e7e19426.chunk.css",
+    "main.js": "/static/js/main.e21123ce.chunk.js",
+    "main.js.map": "/static/js/main.e21123ce.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.b8faf9e7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.b8faf9e7.js.map",
+    "static/css/4.e10332d9.chunk.css": "/static/css/4.e10332d9.chunk.css",
+    "static/js/4.8b51053c.chunk.js": "/static/js/4.8b51053c.chunk.js",
+    "static/js/4.8b51053c.chunk.js.map": "/static/js/4.8b51053c.chunk.js.map",
+    "static/js/5.7989e537.chunk.js": "/static/js/5.7989e537.chunk.js",
+    "static/js/5.7989e537.chunk.js.map": "/static/js/5.7989e537.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.d7a7a7ae49e8a22d4eefab9d865be35c.js": "/precache-manifest.d7a7a7ae49e8a22d4eefab9d865be35c.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/4.e10332d9.chunk.css.map": "/static/css/4.e10332d9.chunk.css.map",
+    "static/css/main.e7e19426.chunk.css.map": "/static/css/main.e7e19426.chunk.css.map",
+    "static/js/0.6069e8d7.chunk.js.LICENSE.txt": "/static/js/0.6069e8d7.chunk.js.LICENSE.txt",
+    "static/js/4.8b51053c.chunk.js.LICENSE.txt": "/static/js/4.8b51053c.chunk.js.LICENSE.txt",
+    "static/media/forms.css": "/static/media/bg-stage-4.f5bc592e.png",
+    "static/media/card-bg-xs.png": "/static/media/card-bg-xs.d88ad510.png",
+    "static/media/checkbox.svg": "/static/media/checkbox.afe5a233.svg",
+    "static/media/gold-label.svg": "/static/media/gold-label.bb046078.svg",
+    "static/media/logo.svg": "/static/media/logo.aca6e2e4.svg",
+    "static/media/trophies-desktop.svg": "/static/media/trophies-desktop.9d46077b.svg",
+    "static/media/trophies-mobile.svg": "/static/media/trophies-mobile.8e62dba6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b8faf9e7.js",
+    "static/css/4.e10332d9.chunk.css",
+    "static/js/4.8b51053c.chunk.js",
+    "static/css/main.e7e19426.chunk.css",
+    "static/js/main.e21123ce.chunk.js"
+  ]
+}

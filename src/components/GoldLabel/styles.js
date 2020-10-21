@@ -13,7 +13,7 @@ export const GoldLabelWrapper = styled.div`
 `;
 
 export const GoldLabelTitle = styled.div`
-    font-size: 16px;
+  font-size: 16px;
 `;
 
 export const GoldLabelDescription = styled.div`
