@@ -78,12 +78,6 @@ const Home = ({ qty, isMobile, isDetailsStage, setIsDetailsStage }) => {
     setCurrentForm(validation.currentForm);
   }, [validation.currentForm]);
 
-  console.log(
-    '%c::Form',
-    'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
-    currentForm,
-  );
-
   return (
     <>
       <FormWrapper

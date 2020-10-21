@@ -2,6 +2,7 @@ import styled, { css } from 'styled-components';
 import logo from '../../images/logo.svg';
 import { primaryFont } from '../variables/fonts';
 import { minWidth, maxWidth } from '../mixins';
+import { Container } from '../common';
 
 const textStyles = css`
   line-height: 1.2;
@@ -9,7 +10,7 @@ const textStyles = css`
   text-transform: uppercase;
 `;
 
-export const FormWrapper = styled.div`
+export const FormWrapper = styled(Container)`
   position: relative;
   display: flex;
   flex-direction: ${({ direction }) => direction || 'row'};

@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
 // Styles
-import { Container } from '../../styles/common';
-import { minWidth, maxWidth } from '../../styles/mixins';
+import { minWidth } from '../../styles/mixins';
 
 // Images
 import trophiesMobile from '../../images/trophies-mobile.svg';
 import trophiesDesktop from '../../images/trophies-desktop.svg';
 
-export const LayoutWrapper = styled(Container)`
+export const LayoutWrapper = styled.div`
   position: relative;
 
   &:before {
@@ -20,12 +19,9 @@ export const LayoutWrapper = styled(Container)`
     width: 100%;
     height: 100%;
     background-size: cover;
+    background: url(${trophiesMobile}) center top no-repeat;
 
-    ${minWidth.desktop`
-      background: url(${trophiesMobile}) center top no-repeat;
-    `}
-
-    ${maxWidth.desktop`
+    ${minWidth.tablet`
       background: url(${trophiesDesktop}) center top no-repeat;
       top: 0;
     `}
