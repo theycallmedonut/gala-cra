@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 // Utils
@@ -17,8 +18,7 @@ import {
 // Constants
 import { HEADER_MONTHS_DONATED, HEADER_TITLE } from '../../constants';
 import { HOME } from '../../config/routePaths';
-import { fetchCardsAction, fetchTotalMonthsAction } from '../../redux/actions/basic';
-import { connect } from 'react-redux';
+import { fetchTotalMonthsAction } from '../../redux/actions/basic';
 
 const Header = ({ getDonatedMonths, totalMonths, history }) => {
   const goToHomepage = () => history.push(HOME);

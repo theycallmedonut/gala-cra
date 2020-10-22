@@ -1,11 +1,9 @@
 import React from 'react';
+import { Form } from 'antd';
 import { FormTitle } from '../../../styles/UI/form';
-import { CARD_INFO, PLACEHOLDER_PHONE, PLACEHOLDER_EMAIL, PHONE_LABEL } from '../../../constants';
+import { PLACEHOLDER_PHONE, PLACEHOLDER_EMAIL, PHONE_LABEL } from '../../../constants';
 import Input from '../components/Input';
-import { Form, Row, Col } from 'antd';
-import useValidation from '../utils/useValidation';
 import ActionButtons from '../components/ActionButtons';
-import { sendContactFormApi } from '../../../api';
 
 const ContactForm = ({ errors, currentForm, bindedInputFunctions, bindedSubmit, onCancel }) => {
   return (

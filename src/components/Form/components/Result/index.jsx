@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React from 'react';
 
 import GoldLabel from '../../../GoldLabel';
 import { BUTTON_AGAIN, RESULT_SUCCESS_MESSAGE, RESULT_TITLE } from '../../../../constants';

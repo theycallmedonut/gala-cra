@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { colorWhite } from '../../styles/variables/colors';
-import trophiesMobile from '../../images/trophies-mobile.svg';
 
 export const HeaderWrapper = styled.div`
   display: flex;

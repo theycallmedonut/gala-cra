@@ -1,6 +1,8 @@
 import React from 'react';
+import { Form, Row, Col } from 'antd';
+import { Link } from 'react-router-dom';
+
 import { FormTitle } from '../../../styles/UI/form';
-import Button from '../components/Button';
 import {
   PLACEHOLDER_CARD_CODE,
   PLACEHOLDER_ADDRESS,
@@ -23,8 +25,6 @@ import {
 import Input from '../components/Input';
 import Switch from '../components/Switch';
 import Checkbox from '../components/Checkbox';
-import { Form, Row, Col } from 'antd';
-import { Link } from 'react-router-dom';
 import ActionButtons from '../components/ActionButtons';
 
 const Check1Label = () => (

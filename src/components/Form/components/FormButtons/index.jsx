@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FormButtonsWrapper } from './styles';
 import { MONTHS, NEED_MORE } from '../../../../constants';
 import FormButtonsItem from './components/FormButtonsItem';

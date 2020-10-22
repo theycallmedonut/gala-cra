@@ -1,29 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { bool, func } from 'prop-types';
+import { Form } from 'antd';
+
+import { FormTitle } from '../../../styles/UI/form';
 import {
-  FormButton,
-  FormInput,
-  FormSubtitle,
-  FormTitle,
-  FormWrapper,
-} from '../../../styles/UI/form';
-import {
-  BUTTON_BACK,
-  BUTTON_NEXT,
   BUTTON_SEND,
-  PHONE_LABEL,
   PLACEHOLDER_NAME,
-  PLACEHOLDER_NEXT,
   PLACEHOLDER_PHONE,
   STAGE_2_ANONYMOUS,
-  STAGE_1_FORM_SUBTITLE,
-  PLACEHOLDER_FIRST_NAME,
 } from '../../../constants';
 import { addLineBreaks } from '../../../utils/string';
 import Input from '../components/Input';
-import Button from '../components/Button';
 import Checkbox from '../components/Checkbox';
-import { Form } from 'antd';
 import ActionButtons from '../components/ActionButtons';
 
 const DetailsForm = ({

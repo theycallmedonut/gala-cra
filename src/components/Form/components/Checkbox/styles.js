@@ -1,7 +1,7 @@
-import styled, { css } from 'styled-components';
-import checkbox from '../../../../images/checkbox.svg';
-import { colorBlackLight, colorRed, colorWhite } from '../../../../styles/variables/colors';
+import styled from 'styled-components';
 import { Checkbox } from 'antd';
+import checkbox from '../../../../images/checkbox.svg';
+import { colorRed, colorWhite } from '../../../../styles/variables/colors';
 import { secondaryFont } from '../../../../styles/variables/fonts';
 
 export const CheckboxWrapper = styled.div``;

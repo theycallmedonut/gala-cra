@@ -5,7 +5,6 @@ import {
   SUCCESS_FETCH_FORM,
   SUCCESS_SAVE_FORMS_DATA,
 } from '../types';
-import { mustBeFilled } from '../../components/Form/utils/validationRules';
 
 const initialState = {
   isLoading: false,

@@ -1,5 +1,3 @@
-const getRandomQty = (max) => Math.random() * Math.floor(max);
-
 export const dummyCardsLists = [
   {
     title: 'Most donated',

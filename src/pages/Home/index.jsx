@@ -92,12 +92,6 @@ const Home = ({
     });
   }, [validation.currentForm]);
 
-  console.log(
-    '%c::',
-    'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
-    formsData,
-  );
-
   return (
     <>
       <FormWrapper

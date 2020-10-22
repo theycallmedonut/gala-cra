@@ -1,6 +1,6 @@
 import styled from 'styled-components';
-import { colorBlackLight, colorRed, colorWhite } from '../../../../styles/variables/colors';
 import { Switch } from 'antd';
+import { colorRed } from '../../../../styles/variables/colors';
 
 export const FormSwitchWrapper = styled.div`
   display: flex;

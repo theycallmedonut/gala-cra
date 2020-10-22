@@ -1,4 +1,3 @@
-import fetchMock from 'fetch-mock';
 import { dummyCardsLists } from './dummyResponse';
 
 const mockFetch = (data, isFail) => {

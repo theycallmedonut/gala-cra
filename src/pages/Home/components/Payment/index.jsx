@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // Constants
 import { CARD, CONTACT_ME, PAYMENT_TITLE } from '../../../../constants';
 
 // Components
 import PaymentForm from '../../../../components/Form/forms/PaymentForm';
-import { FormTitle, FormWrapper } from '../../../../styles/UI/form';
+import { FormTitle } from '../../../../styles/UI/form';
 import { TabsItem, TabsWrapper } from '../../../../styles/UI/tabs';
 import ContactForm from '../../../../components/Form/forms/ContactForm';
 

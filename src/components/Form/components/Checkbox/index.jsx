@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckboxBlock, CheckboxTitle, CheckboxWrapper } from './styles';
+import { CheckboxBlock, CheckboxTitle } from './styles';
 
 const Checkbox = ({ label, ...props }) => {
   return (
