@@ -1,60 +1,71 @@
 (this.webpackJsonpi = this.webpackJsonpi || []).push([
-  [2],
+  [1],
   [
     ,
     ,
     ,
-    ,
     function(t, n, e) {
       'use strict';
-      e.d(n, 'e', function() {
+      e.d(n, 'd', function() {
         return r;
       }),
-        e.d(n, 'h', function() {
+        e.d(n, 'f', function() {
           return a;
         }),
-        e.d(n, 'b', function() {
+        e.d(n, 'j', function() {
           return o;
         }),
-        e.d(n, 'd', function() {
+        e.d(n, 'b', function() {
           return i;
         }),
-        e.d(n, 'g', function() {
+        e.d(n, 'e', function() {
           return c;
         }),
-        e.d(n, 'a', function() {
+        e.d(n, 'i', function() {
           return u;
         }),
-        e.d(n, 'f', function() {
+        e.d(n, 'a', function() {
           return l;
         }),
-        e.d(n, 'i', function() {
+        e.d(n, 'g', function() {
           return s;
         }),
-        e.d(n, 'c', function() {
+        e.d(n, 'k', function() {
           return d;
         }),
-        e.d(n, 'l', function() {
+        e.d(n, 'c', function() {
           return f;
         }),
-        e.d(n, 'k', function() {
+        e.d(n, 'o', function() {
           return m;
         }),
-        e.d(n, 'j', function() {
+        e.d(n, 'n', function() {
           return p;
+        }),
+        e.d(n, 'm', function() {
+          return b;
+        }),
+        e.d(n, 'l', function() {
+          return g;
+        }),
+        e.d(n, 'h', function() {
+          return h;
         });
-      var r = 'START_FETCH_FORM',
-        a = 'SUCCESS_FETCH_FORM',
-        o = 'FAILURE_FETCH_QTY_FORM',
-        i = 'START_FETCH_CARDS_LIST',
-        c = 'SUCCESS_FETCH_CARDS_LIST',
-        u = 'FAILURE_FETCH_CARDS_LIST',
-        l = 'START_FETCH_TOTAL_MONTHS',
-        s = 'SUCCESS_FETCH_TOTAL_MONTHS',
-        d = 'FAILURE_FETCH_TOTAL_MONTHS',
-        f = 'SUCCESS_SET_QTY',
-        m = 'SUCCESS_SET_IS_MOBILE',
-        p = 'SUCCESS_SET_IS_DETAILS_STAGE';
+      var r = 'qty',
+        a = 'START_FETCH_FORM',
+        o = 'SUCCESS_FETCH_FORM',
+        i = 'FAILURE_FETCH_QTY_FORM',
+        c = 'START_FETCH_CARDS_LIST',
+        u = 'SUCCESS_FETCH_CARDS_LIST',
+        l = 'FAILURE_FETCH_CARDS_LIST',
+        s = 'START_FETCH_TOTAL_MONTHS',
+        d = 'SUCCESS_FETCH_TOTAL_MONTHS',
+        f = 'FAILURE_FETCH_TOTAL_MONTHS',
+        m = 'SUCCESS_SET_QTY',
+        p = 'SUCCESS_SET_IS_MOBILE',
+        b = 'SUCCESS_SET_IS_DETAILS_STAGE',
+        g = 'SUCCESS_SAVE_FORMS_DATA',
+        h = 'SUCCESS_CLEAR_FORMS_DATA';
     },
     ,
     ,
@@ -66,32 +77,6 @@
     ,
     ,
     ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    ,
-    function(t, n, e) {
-      'use strict';
-      e.d(n, 'a', function() {
-        return a;
-      }),
-        e.d(n, 'b', function() {
-          return o;
-        });
-      var r = { HOME: '/', PAYMENT: '/payment' },
-        a =
-          (Object.keys(r).reduce(function(t, n) {
-            return (t[n] = n), t;
-          }, {}),
-          r.HOME),
-        o = r.PAYMENT;
-    },
-    function(t, n, e) {
-      t.exports = e.p + 'static/media/trophies-mobile.8e62dba6.svg';
-    },
     ,
     ,
     ,
@@ -115,15 +100,15 @@
         e.d(n, 'c', function() {
           return l;
         });
-      var r = e(4),
-        a = e(38),
+      var r = e(3),
+        a = e(24),
         o = function(t) {
           return function(n) {
             return (
-              n({ type: r.d }),
+              n({ type: r.e }),
               Object(a.a)(t)
                 .then(function(t) {
-                  return n({ type: r.g, payload: t.body });
+                  return n({ type: r.i, payload: t.body });
                 })
                 .catch(function(t) {
                   return n({
@@ -138,10 +123,10 @@
         i = function(t) {
           return function(n) {
             return (
-              n({ type: r.f }),
+              n({ type: r.g }),
               Object(a.b)(t)
                 .then(function(t) {
-                  return n({ type: r.i, payload: t.body });
+                  return n({ type: r.k, payload: t.body });
                 })
                 .catch(function(t) {
                   return n({
@@ -156,26 +141,23 @@
         c = function(t) {
           var n = t.qty;
           return function(t) {
-            t({ type: r.l, payload: n });
+            t({ type: r.o, payload: n });
           };
         },
         u = function(t) {
           return function(n) {
-            n({ type: r.k, payload: t });
+            n({ type: r.n, payload: t });
           };
         },
         l = function(t) {
           return function(n) {
-            n({ type: r.j, payload: t });
+            n({ type: r.m, payload: t });
           };
         };
     },
-    ,
-    ,
     function(t, n, e) {
-      t.exports = e.p + 'static/media/trophies-desktop.9d46077b.svg';
+      t.exports = e.p + 'static/media/trophies-mobile.8e62dba6.svg';
     },
-    ,
     function(t, n, e) {
       'use strict';
       e.d(n, 'j', function() {
@@ -266,34 +248,34 @@
           return A;
         }),
         e.d(n, 'k', function() {
-          return I;
-        }),
-        e.d(n, 'l', function() {
           return F;
         }),
-        e.d(n, 'm', function() {
+        e.d(n, 'l', function() {
           return L;
         }),
-        e.d(n, 'n', function() {
-          return z;
+        e.d(n, 'm', function() {
+          return I;
         }),
-        e.d(n, 'o', function() {
+        e.d(n, 'n', function() {
           return R;
         }),
+        e.d(n, 'o', function() {
+          return z;
+        }),
         e.d(n, 'q', function() {
-          return U;
+          return D;
         }),
         e.d(n, 'r', function() {
-          return D;
+          return U;
         }),
         e.d(n, 'f', function() {
           return H;
         }),
         e.d(n, 'g', function() {
-          return P;
+          return q;
         }),
         e.d(n, 'H', function() {
-          return q;
+          return P;
         }),
         e.d(n, 'h', function() {
           return N;
@@ -318,7 +300,7 @@
         E = 'Other amount',
         O = 'Your phone number',
         w = 'Your email',
-        j = 'MonthItem number',
+        j = 'Card number',
         k = 'MM',
         S = 'YY',
         x = 'CVV',
@@ -327,20 +309,19 @@
         C = 'National ID',
         M = 'Last name',
         A = 'I\u2019m a Turkish resident',
-        I = 'Ayd\u0131nlatma Metni\u2019ni',
-        F = 'okudum, anlad\u0131m.',
-        L = 'Sat\u0131\u015f S\xf6zle\u015fmesi\u2019ni',
-        z = 'okudum, kabul ediyorum.',
-        R =
+        F = 'Ayd\u0131nlatma Metni\u2019ni',
+        L = 'okudum, anlad\u0131m.',
+        I = 'Sat\u0131\u015f S\xf6zle\u015fmesi\u2019ni',
+        R = 'okudum, kabul ediyorum.',
+        z =
           "Galatasaray'\u0131n kampanyalar\u0131ndan ve Galatasaray ile ilgili yeniliklerden email vas\u0131tas\u0131yla haberdar olmak istiyorum.\n",
-        U = 'Month',
-        D = 'Months',
+        D = 'Month',
+        U = 'Months',
         H = 'Card',
-        P = 'Card info',
-        q = 'Premium member',
+        q = 'Card info',
+        P = 'Premium member',
         N = 'Contact me';
     },
-    ,
     ,
     function(t, n, e) {
       'use strict';
@@ -359,30 +340,26 @@
         e.d(n, 'c', function() {
           return l;
         });
-      e(81);
       var r = [
           {
             title: 'Most donated',
-            list: Array(50).fill({
-              title: '0from Ultraslan community',
+            list: Array(30).fill({
+              title: 'from Ultraslan community',
               date: ' 2 September 2020',
               qty: 230,
             }),
           },
           {
             title: 'Most recent',
-            list: Array(10).fill({
-              title: '0from Ultraslan community',
+            list: Array(30).fill({
+              title: ' Ultraslan community',
               date: ' 2 September 2020',
               qty: 320,
             }),
           },
         ],
         a = function(t, n) {
-          return (
-            console.log('Sent:', t, n),
-            n ? Promise.reject({ status: 400 }) : Promise.resolve({ status: 200, body: t })
-          );
+          return n ? Promise.reject({ status: 400 }) : Promise.resolve({ status: 200, body: t });
         },
         o = function() {
           return a(r);
@@ -400,7 +377,6 @@
           return a(t);
         };
     },
-    ,
     ,
     ,
     ,
@@ -432,7 +408,7 @@
         e.d(n, 'b', function() {
           return l;
         });
-      var r = e(10),
+      var r = e(9),
         a = e(6),
         o = { phone: 768, tablet: 1024, desktop: 1200 };
       function i() {
@@ -470,6 +446,7 @@
           );
         }, {});
     },
+    ,
     function(t, n, e) {
       'use strict';
       e.d(n, 'a', function() {
@@ -490,26 +467,6 @@
           });
         };
     },
-    ,
-    ,
-    ,
-    function(t, n, e) {
-      'use strict';
-      var r = e(0),
-        a = e(22),
-        o = Object(r.lazy)(function() {
-          return Promise.all([e.e(0), e.e(1), e.e(5)]).then(e.bind(null, 88));
-        }),
-        i = Object(r.lazy)(function() {
-          return Promise.all([e.e(0), e.e(1)]).then(e.bind(null, 87));
-        }),
-        c = [
-          { path: a.a, component: o, exact: !0 },
-          { path: a.b, component: i, exact: !0 },
-        ],
-        u = [].concat(c);
-      n.a = u;
-    },
     function(t, n, e) {
       t.exports = e.p + 'static/media/logo.aca6e2e4.svg';
     },
@@ -519,6 +476,11 @@
     ,
     ,
     ,
+    ,
+    ,
+    function(t, n, e) {
+      t.exports = e.p + 'static/media/trophies-desktop.65c4918e.png';
+    },
     function(t, n, e) {
       t.exports = e.p + 'static/media/bg-cards-1.3e9dd3cb.png';
     },
@@ -549,14 +511,13 @@
     function(t, n, e) {
       t.exports = e.p + 'static/media/bg-stage-4.0410fb0b.png';
     },
-    ,
-    ,
-    ,
-    ,
     function(t, n, e) {
-      t.exports = e(86);
+      t.exports = e.p + 'static/media/trophies-desktop.9d46077b.svg';
     },
     ,
+    function(t, n, e) {
+      t.exports = e(68);
+    },
     ,
     ,
     ,
@@ -574,114 +535,114 @@
       e.r(n);
       var r = e(0),
         a = e.n(r),
-        o = e(17),
+        o = e(15),
         i = e.n(o),
-        c = e(29),
-        u = e(3),
-        l = e(50),
-        s = e(18),
-        d = e(14),
-        f = e(12),
-        m = e(2),
-        p = e(4),
-        b = { isLoading: !1, error: '', qty: {}, payment: {}, contact: {} };
-      var g = { totalMonths: '', cards: [], qty: 0, isMobile: null, isDetailsStage: !1 };
-      var h = {};
-      var y = Object(d.c)({
+        c = e(19),
+        u = e(4),
+        l = { HOME: '/', PAYMENT: '/payment' },
+        s =
+          (Object.keys(l).reduce(function(t, n) {
+            return (t[n] = n), t;
+          }, {}),
+          l.HOME),
+        d = l.PAYMENT,
+        f = Object(r.lazy)(function() {
+          return Promise.all([e.e(0), e.e(6), e.e(4)]).then(e.bind(null, 308));
+        }),
+        m = Object(r.lazy)(function() {
+          return Promise.all([e.e(0), e.e(5)]).then(e.bind(null, 165));
+        }),
+        p = [].concat([
+          { path: s, component: f, exact: !0 },
+          { path: d, component: m, exact: !0 },
+        ]),
+        b = e(16),
+        g = e(12),
+        h = e(14),
+        y = e(1),
+        v = e(3),
+        E = { isLoading: !1, error: '', qty: {}, payment: {}, contact: {}, formsData: {} };
+      var O = { totalMonths: '', cards: [], qty: 0, isMobile: null, isDetailsStage: !1 };
+      var w = {};
+      var j = Object(g.c)({
           form: function() {
             var t,
-              n = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : b,
+              n = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : E,
               e = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
             switch (e.type) {
-              case p.e:
-                return Object(m.a)(Object(m.a)({}, n), {}, { isLoading: !0 });
-              case p.b:
-                return Object(m.a)(Object(m.a)({}, n), {}, { isLoading: !1 });
-              case p.h:
-                return Object(m.a)(
-                  Object(m.a)({}, n),
+              case v.f:
+                return Object(y.a)(Object(y.a)({}, n), {}, { isLoading: !0 });
+              case v.b:
+                return Object(y.a)(Object(y.a)({}, n), {}, { isLoading: !1 });
+              case v.j:
+                return Object(y.a)(
+                  Object(y.a)({}, n),
                   {},
                   ((t = {}),
-                  Object(f.a)(
+                  Object(h.a)(
                     t,
                     e.payload.formType,
-                    Object(m.a)(Object(m.a)({}, n[e.payload.formType]), e.payload),
+                    Object(y.a)(Object(y.a)({}, n[e.payload.formType]), e.payload),
                   ),
-                  Object(f.a)(t, 'isLoading', !1),
+                  Object(h.a)(t, 'isLoading', !1),
                   t),
                 );
+              case v.l:
+                return Object(y.a)(
+                  Object(y.a)({}, n),
+                  {},
+                  { formsData: Object(y.a)(Object(y.a)({}, n.formsData), e.payload) },
+                );
+              case v.h:
+                return Object(y.a)(Object(y.a)({}, n), {}, { formsData: {} });
               default:
                 return n;
             }
           },
           basic: function() {
-            var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : g,
+            var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : O,
               n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {};
             switch (n.type) {
-              case p.g:
-                return Object(m.a)(Object(m.a)({}, t), {}, { cards: n.payload });
-              case p.i:
-                return Object(m.a)(Object(m.a)({}, t), {}, { totalMonths: n.payload });
-              case p.l:
-                return Object(m.a)(Object(m.a)({}, t), {}, { qty: n.payload });
-              case p.k:
-                return Object(m.a)(Object(m.a)({}, t), {}, { isMobile: n.payload });
-              case p.j:
-                return Object(m.a)(Object(m.a)({}, t), {}, { isDetailsStage: n.payload });
+              case v.i:
+                return Object(y.a)(Object(y.a)({}, t), {}, { cards: n.payload });
+              case v.k:
+                return Object(y.a)(Object(y.a)({}, t), {}, { totalMonths: n.payload });
+              case v.o:
+                return Object(y.a)(Object(y.a)({}, t), {}, { qty: n.payload });
+              case v.n:
+                return Object(y.a)(Object(y.a)({}, t), {}, { isMobile: n.payload });
+              case v.m:
+                return Object(y.a)(Object(y.a)({}, t), {}, { isDetailsStage: n.payload });
               default:
                 return t;
             }
           },
           network: function() {
-            var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : h,
+            var t = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : w,
               n = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : {},
               e = n.type.replace(/SUCCESS_|FAILURE_/g, 'START_'),
               r = n.type.startsWith('START_'),
               a = n.type.startsWith('SUCCESS_') || n.type.startsWith('FAILURE_');
-            return r || a ? Object(m.a)(Object(m.a)({}, t), {}, Object(f.a)({}, e, r)) : t;
+            return r || a ? Object(y.a)(Object(y.a)({}, t), {}, Object(h.a)({}, e, r)) : t;
           },
         }),
-        v = e(53),
-        E = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || d.d,
-        O = Object(d.e)(y, E(Object(d.a)(v.a))),
-        w = function(t) {
+        k = e(38),
+        S = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || g.d,
+        x = Object(g.e)(j, S(Object(g.a)(k.a))),
+        _ = function(t) {
           var n = t.children;
-          return a.a.createElement(s.a, { store: O }, n);
+          return a.a.createElement(b.a, { store: x }, n);
         },
-        j = e(28),
-        k = e(54),
-        S = e(46),
-        x = e(51),
-        _ = e.n(x),
-        T = e(10),
-        C = e(6),
-        M = e(44),
-        A = e(23),
-        I = e.n(A);
-      function F() {
-        var t = Object(T.a)(['\n  font-size: 16px;\n  line-height: 1;\n  margin-bottom: 24px;\n']);
-        return (
-          (F = function() {
-            return t;
-          }),
-          t
-        );
-      }
-      function L() {
-        var t = Object(T.a)([
-          "\n  font-size: 60px;\n  font-weight: 700;\n  line-height: 1;\n  margin-bottom: 16px;\n  position: relative;\n\n  &:before {\n    content: '';\n    position: absolute;\n    z-index: -1;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(331.38deg, #e82a00 49.87%, #0f0004 62.54%, #fdb913 67.52%);\n    filter: blur(23px);\n    border-radius: 19px;\n    //transform: rotate(-90deg);\n  }\n",
-        ]);
-        return (
-          (L = function() {
-            return t;
-          }),
-          t
-        );
-      }
+        T = e(18),
+        C = e(39),
+        M = e(32),
+        A = e(33),
+        F = e.n(A),
+        L = e(9),
+        I = e(6),
+        R = e(29);
       function z() {
-        var t = Object(T.a)([
-          '\n  font-size: 30px;\n  line-height: 1.2;\n  font-weight: 700;\n  margin-bottom: 24px;\n',
-        ]);
+        var t = Object(L.a)(['\n  font-size: 16px;\n  line-height: 1;\n  margin-bottom: 24px;\n']);
         return (
           (z = function() {
             return t;
@@ -689,19 +650,20 @@
           t
         );
       }
-      function R() {
-        var t = Object(T.a)(['\n  width: 100px;\n  margin: 40px auto 20px;\n']);
+      function D() {
+        var t = Object(L.a)([
+          "\n  font-size: 60px;\n  font-weight: 700;\n  line-height: 1;\n  margin-bottom: 16px;\n  position: relative;\n\n  &:before {\n    content: '';\n    position: absolute;\n    z-index: -1;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background: linear-gradient(331.38deg, #e82a00 49.87%, #0f0004 62.54%, #fdb913 67.52%);\n    filter: blur(23px);\n    border-radius: 19px;\n    //transform: rotate(-90deg);\n  }\n",
+        ]);
         return (
-          (R = function() {
+          (D = function() {
             return t;
           }),
           t
         );
       }
       function U() {
-        var t = Object(T.a)([
-          '\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  text-align: center;\n  text-transform: uppercase;\n  color: ',
-          ';\n  overflow-y: visible;\n  padding: 0 8px;\n',
+        var t = Object(L.a)([
+          '\n  font-size: 30px;\n  line-height: 1.2;\n  font-weight: 700;\n  margin-bottom: 24px;\n',
         ]);
         return (
           (U = function() {
@@ -710,18 +672,38 @@
           t
         );
       }
-      var D = C.b.div(U(), M.d),
-        H = C.b.img(R()),
-        P = C.b.div(z()),
-        q = C.b.div(L()),
-        N = C.b.div(F()),
-        Y = e(35),
-        G = e(22),
-        B = e(30),
-        W = { getDonatedMonths: B.b },
-        J = Object(s.b)(function(t) {
+      function H() {
+        var t = Object(L.a)(['\n  width: 100px;\n  margin: 40px auto 20px;\n']);
+        return (
+          (H = function() {
+            return t;
+          }),
+          t
+        );
+      }
+      function q() {
+        var t = Object(L.a)([
+          '\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-direction: column;\n  text-align: center;\n  text-transform: uppercase;\n  color: ',
+          ';\n  overflow-y: visible;\n  padding: 0 8px;\n',
+        ]);
+        return (
+          (q = function() {
+            return t;
+          }),
+          t
+        );
+      }
+      var P = I.b.div(q(), R.d),
+        N = I.b.img(H()),
+        Y = I.b.div(U()),
+        G = I.b.div(D()),
+        B = I.b.div(z()),
+        W = e(22),
+        V = e(20),
+        J = { getDonatedMonths: V.b },
+        Q = Object(b.b)(function(t) {
           return { totalMonths: t.basic.totalMonths };
-        }, W)(
+        }, J)(
           Object(u.g)(function(t) {
             var n = t.getDonatedMonths,
               e = t.totalMonths,
@@ -734,56 +716,58 @@
                 [e],
               ),
               a.a.createElement(
-                D,
+                P,
                 null,
-                a.a.createElement(H, {
-                  src: _.a,
+                a.a.createElement(N, {
+                  src: F.a,
                   onClick: function() {
-                    return o.push(G.a);
+                    return o.push(s);
                   },
                 }),
-                a.a.createElement(P, null, Object(S.a)(Y.j)),
-                a.a.createElement(q, null, e || '...'),
-                a.a.createElement(N, null, Y.i),
+                a.a.createElement(Y, null, Object(M.a)(W.j)),
+                a.a.createElement(G, null, e || '...'),
+                a.a.createElement(B, null, W.i),
               )
             );
           }),
         ),
-        V = e(45),
-        Q = e(33),
-        X = e.n(Q);
-      function $() {
-        var t = Object(T.a)([
+        X = e(30),
+        $ = e(21),
+        K = e.n($),
+        Z = e(42),
+        tt = e.n(Z);
+      function nt() {
+        var t = Object(L.a)([
           '\n      background: url(',
           ') center top no-repeat;\n      top: 0;\n    ',
         ]);
         return (
-          ($ = function() {
+          (nt = function() {
             return t;
           }),
           t
         );
       }
-      function K() {
-        var t = Object(T.a)([
+      function et() {
+        var t = Object(L.a)([
           "\n  position: relative;\n\n  &:before {\n    content: '';\n    position: absolute;\n    z-index: -2;\n    top: -100px;\n    left: 0;\n    width: 100%;\n    height: 100%;\n    background-size: cover;\n    background: url(",
           ') center top no-repeat;\n\n    ',
           '\n  }\n',
         ]);
         return (
-          (K = function() {
+          (et = function() {
             return t;
           }),
           t
         );
       }
-      var Z = C.b.div(K(), I.a, V.b.tablet($(), X.a)),
-        tt = document.head,
-        nt = function(t) {
+      var rt = I.b.div(et(), K.a, X.b.tablet(nt(), tt.a)),
+        at = document.head,
+        ot = function(t) {
           var n = t.children;
-          return o.createPortal(n, tt);
+          return o.createPortal(n, at);
         },
-        et = function(t) {
+        it = function(t) {
           var n = t.title,
             e = void 0 === n ? 'Galatasaray' : n,
             r = t.description,
@@ -793,7 +777,7 @@
             u = t.url,
             l = void 0 === u ? '' : u;
           return a.a.createElement(
-            nt,
+            ot,
             null,
             a.a.createElement('link', {
               href:
@@ -822,35 +806,37 @@
             a.a.createElement('meta', { name: 'description', content: o }),
           );
         },
-        rt = e(58),
-        at = e.n(rt),
-        ot = e(59),
-        it = e.n(ot),
-        ct = e(60),
+        ct = e(43),
         ut = e.n(ct),
-        lt = e(61),
+        lt = e(44),
         st = e.n(lt),
-        dt = e(62),
+        dt = e(45),
         ft = e.n(dt),
-        mt = e(63),
+        mt = e(46),
         pt = e.n(mt),
-        bt = e(64),
+        bt = e(47),
         gt = e.n(bt),
-        ht = e(65),
+        ht = e(48),
         yt = e.n(ht),
-        vt = e(66),
+        vt = e(49),
         Et = e.n(vt),
-        Ot = e(67),
+        Ot = e(50),
         wt = e.n(Ot),
-        jt = [at.a, it.a, ut.a, st.a, ft.a, pt.a, gt.a, yt.a, Et.a, wt.a, I.a, X.a],
-        kt = { setIsMobile: B.d },
-        St = Object(s.b)(function(t) {
+        jt = e(51),
+        kt = e.n(jt),
+        St = e(52),
+        xt = e.n(St),
+        _t = e(53),
+        Tt = e.n(_t),
+        Ct = [ut.a, st.a, ft.a, pt.a, gt.a, yt.a, Et.a, wt.a, kt.a, xt.a, K.a, Tt.a],
+        Mt = { setIsMobile: V.d },
+        At = Object(b.b)(function(t) {
           return { isMobile: t.basic.isMobile };
-        }, kt)(function(t) {
+        }, Mt)(function(t) {
           var n = t.setIsMobile,
             e = t.isMobile,
             o = t.component,
-            i = Object(j.a)(t, ['setIsMobile', 'isMobile', 'component']),
+            i = Object(T.a)(t, ['setIsMobile', 'isMobile', 'component']),
             c = Object(r.useCallback)(
               function() {
                 return n(
@@ -878,7 +864,7 @@
                 null !== e &&
                   (function(t) {
                     var n = t.isMobile;
-                    jt.forEach(function(t) {
+                    Ct.forEach(function(t) {
                       new window.Image().src = n ? t : t.replace(/mobile/i, 'desktop');
                     });
                   })({ isMobile: e });
@@ -902,34 +888,34 @@
             a.a.createElement(
               a.a.Fragment,
               null,
-              a.a.createElement(et, null),
-              a.a.createElement(J, null),
+              a.a.createElement(it, null),
+              a.a.createElement(Q, null),
               a.a.createElement(
-                Z,
+                rt,
                 { flexDirection: 'column', alignItems: 'center' },
                 a.a.createElement(o, i),
               ),
             )
           );
         });
-      var xt = function(t) {
+      var Ft = function(t) {
         var n = t.middleware,
           e = t.component,
-          r = Object(j.a)(t, ['middleware', 'component']);
+          r = Object(T.a)(t, ['middleware', 'component']);
         return a.a.createElement(
           u.b,
           Object.assign({}, r, {
             render: function(t) {
               var o = (function(t, n) {
-                var e = Object(m.a)({}, n.location),
+                var e = Object(y.a)({}, n.location),
                   r = function(t) {
-                    e = Object(m.a)({}, t);
+                    e = Object(y.a)({}, t);
                   };
                 if (t) {
                   if ('function' === typeof t) return t(n, r), e;
                   if (Array.isArray(t)) {
                     var a,
-                      o = Object(k.a)(t);
+                      o = Object(C.a)(t);
                     try {
                       for (o.s(); !(a = o.n()).done; ) {
                         (0, a.value)(n, r);
@@ -946,36 +932,34 @@
               })(n, t);
               return o.pathname !== t.location.pathname
                 ? a.a.createElement(u.a, { to: o })
-                : a.a.createElement(St, Object.assign({}, r, t, { component: e }));
+                : a.a.createElement(At, Object.assign({}, r, t, { component: e }));
             },
           }),
         );
       };
-      xt.defaultProps = { location: { pathname: '' } };
-      var _t = xt,
-        Tt = e(68),
-        Ct = function(t) {
-          Object(Tt.a)(t);
-          var n = Object(r.useCallback)(function() {}, []);
-          return Object(r.useEffect)(n, []), null;
+      Ft.defaultProps = { location: { pathname: '' } };
+      var Lt = Ft,
+        It = function() {
+          var t = Object(r.useCallback)(function() {}, []);
+          return Object(r.useEffect)(t, []), null;
         };
-      e(83), e(84), e(85);
-      var Mt = function() {
+      e(65), e(66), e(67);
+      var Rt = function() {
         return a.a.createElement(
-          w,
+          _,
           null,
           a.a.createElement(
             c.a,
             null,
-            a.a.createElement(Ct, null),
+            a.a.createElement(It, null),
             a.a.createElement(
               r.Suspense,
               { fallback: '...loading' },
               a.a.createElement(
                 u.d,
                 null,
-                l.a.map(function(t) {
-                  return a.a.createElement(_t, {
+                p.map(function(t) {
+                  return a.a.createElement(Lt, {
                     key: t.path,
                     path: t.path,
                     component: t.component,
@@ -992,7 +976,7 @@
           '[::1]' === window.location.hostname ||
           window.location.hostname.match(/^127(?:\.(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}$/),
       );
-      i.a.render(a.a.createElement(Mt, null), document.getElementById('root')),
+      i.a.render(a.a.createElement(Rt, null), document.getElementById('root')),
         'serviceWorker' in navigator &&
           navigator.serviceWorker.ready
             .then(function(t) {
@@ -1003,6 +987,6 @@
             });
     },
   ],
-  [[72, 3, 4]],
+  [[55, 2, 3]],
 ]);
-//# sourceMappingURL=main.e21123ce.chunk.js.map
+//# sourceMappingURL=main.75786dfe.chunk.js.map

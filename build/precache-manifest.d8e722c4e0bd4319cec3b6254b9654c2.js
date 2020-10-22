@@ -1,47 +1,55 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    revision: 'df9f1fa64ccfa3eb9a807d71939de1ab',
+    revision: 'ee943e73fa7dc412ba9c5ed626d6a3e6',
     url: '/index.html',
   },
   {
-    revision: '5ba1a67af16926deb236',
-    url: '/static/css/4.e10332d9.chunk.css',
+    revision: '7556cce5b433a3d4da71',
+    url: '/static/css/3.e10332d9.chunk.css',
   },
   {
-    revision: '9a3f640fe219fd26e05b',
+    revision: '6eac7a02e2e422a20abf',
     url: '/static/css/main.e7e19426.chunk.css',
   },
   {
-    revision: '1bba8b50fd43e0b9a8df',
-    url: '/static/js/0.6069e8d7.chunk.js',
+    revision: '0df73d440abd24a9d9ca',
+    url: '/static/js/0.cd8ae7fd.chunk.js',
   },
   {
-    revision: '5a96a401f7792fd9e04e59ee5b20e649',
-    url: '/static/js/0.6069e8d7.chunk.js.LICENSE.txt',
+    revision: '81896c98bac7b5b16ab1d3790da5b937',
+    url: '/static/js/0.cd8ae7fd.chunk.js.LICENSE.txt',
   },
   {
-    revision: '12626f35804dac7df1a8',
-    url: '/static/js/1.5f5e546b.chunk.js',
-  },
-  {
-    revision: '5ba1a67af16926deb236',
-    url: '/static/js/4.8b51053c.chunk.js',
+    revision: '7556cce5b433a3d4da71',
+    url: '/static/js/3.a44c4eca.chunk.js',
   },
   {
     revision: 'c64c486544348f10a6d6c716950bc223',
-    url: '/static/js/4.8b51053c.chunk.js.LICENSE.txt',
+    url: '/static/js/3.a44c4eca.chunk.js.LICENSE.txt',
   },
   {
-    revision: '2cd122a91368b0f5b88d',
-    url: '/static/js/5.7989e537.chunk.js',
+    revision: '4ab57e3ccfac64f9ed89',
+    url: '/static/js/4.480ded47.chunk.js',
   },
   {
-    revision: '9a3f640fe219fd26e05b',
-    url: '/static/js/main.e21123ce.chunk.js',
+    revision: '68e9f89495cc150ad800',
+    url: '/static/js/5.bdd845b3.chunk.js',
   },
   {
-    revision: '001a13394ff669f5cd0b',
-    url: '/static/js/runtime-main.b8faf9e7.js',
+    revision: '1a30bf5895d23f74d5e5',
+    url: '/static/js/6.a23d2271.chunk.js',
+  },
+  {
+    revision: '8e7fa176b006150306288bd092a696c0',
+    url: '/static/js/6.a23d2271.chunk.js.LICENSE.txt',
+  },
+  {
+    revision: '6eac7a02e2e422a20abf',
+    url: '/static/js/main.75786dfe.chunk.js',
+  },
+  {
+    revision: 'a9f33adf80a567d14c10',
+    url: '/static/js/runtime-main.95f5f609.js',
   },
   {
     revision: '17f4b705c0913d94d80efd57b3aa4461',
@@ -138,6 +146,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     revision: 'aca6e2e4600fc1f1237eb880a0597aa7',
     url: '/static/media/logo.aca6e2e4.svg',
+  },
+  {
+    revision: '65c4918e81c8b1b137332382bf379062',
+    url: '/static/media/trophies-desktop.65c4918e.png',
   },
   {
     revision: '9d46077b51e7fa6187875ed4eff1f561',
