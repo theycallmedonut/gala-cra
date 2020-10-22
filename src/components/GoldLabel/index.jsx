@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { memo } from 'react';
+import { connect } from 'react-redux';
+import moment from 'moment';
 import { GoldLabelWrapper, GoldLabelTitle, GoldLabelDescription } from './styles';
 
-const GoldLabel = ({ className, title, date, style }) => {
+const GoldLabel = ({ formsData, className, style }) => {
+  const { firstName, lastName, isAnonymous } = formsData;
+  const currentDate = moment().format('D MMMM YYYY');
+  const isDefinedUser = !!(!isAnonymous && (firstName || lastName));
+
+  console.log(
+    '%c::',
+    'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
+    isDefinedUser,
+    isAnonymous,
+    firstName,
+    lastName,
+  );
+
   return (
     <GoldLabelWrapper className={className} style={style}>
-      <GoldLabelTitle>{title}</GoldLabelTitle>
-      <GoldLabelDescription>{date}</GoldLabelDescription>
+      {isDefinedUser && <GoldLabelTitle>{`from ${firstName} ${lastName}`}</GoldLabelTitle>}
+      <GoldLabelDescription>{currentDate}</GoldLabelDescription>
     </GoldLabelWrapper>
   );
 };
 
-export default GoldLabel;
+const mapStateToProps = ({ form }) => ({
+  formsData: form.formsData,
+});
+
+export default memo(connect(mapStateToProps, {})(GoldLabel));

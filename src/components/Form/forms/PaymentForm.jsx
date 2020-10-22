@@ -49,7 +49,7 @@ const PaymentForm = ({
 }) => {
   return (
     <>
-      <FormTitle style={{ textAlign: 'left' }}>{CARD_INFO}</FormTitle>
+      <FormTitle style={{ textAlign: 'left', margin: '0 0 10px' }}>{CARD_INFO}</FormTitle>
 
       {/* label: PERSON */}
 

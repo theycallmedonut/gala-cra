@@ -7,7 +7,6 @@ const TYPE_MULTISELECT = 'multiselect';
 const TYPE_CHECKBOX = 'checkbox';
 const TYPE_DATEPICKER = 'datepicker';
 const TYPE_RADIO = 'radio';
-const TYPE_SWITCH = 'switch';
 
 function formToKeyValue(form) {
   const result = {};

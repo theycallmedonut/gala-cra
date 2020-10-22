@@ -18,6 +18,7 @@ import { mustBeFilled, mustBeNumber } from '../../components/Form/utils/validati
 import Result from '../../components/Form/components/Result';
 import Cards from '../../components/Cards';
 import { setIsDetailsStageAction } from '../../redux/actions/basic';
+import { clearFormsDataAction, saveFormsDataAction } from '../../redux/actions/form';
 
 const initialForm = {
   1: {
@@ -47,13 +48,21 @@ const initialForm = {
   },
 };
 
-const Home = ({ qty, isMobile, isDetailsStage, setIsDetailsStage }) => {
+const Home = ({
+  qty,
+  isMobile,
+  formsData,
+  saveFormsData,
+  clearFormsData,
+  isDetailsStage,
+  setIsDetailsStage,
+}) => {
   const [stage, setStage] = useState(1);
   const [currentForm, setCurrentForm] = useState({});
 
   // Actions:
-  const goToStage = (number) => setStage(number);
   const goToStart = () => setStage(1);
+  const goToStage = (number) => setStage(number);
   const goToNextStage = () => setStage(stage + 1);
   const goToPrevStage = () => setStage(stage - 1);
   const sendQty = () => sendQtyFormApi(currentForm).then(goToNextStage);
@@ -71,12 +80,23 @@ const Home = ({ qty, isMobile, isDetailsStage, setIsDetailsStage }) => {
 
   const restartDonation = () => {
     onClearForm();
+    clearFormsData();
     setIsDetailsStage(false);
   };
 
   useEffect(() => {
     setCurrentForm(validation.currentForm);
+    saveFormsData({
+      ...formsData,
+      ...validation.currentForm,
+    });
   }, [validation.currentForm]);
+
+  console.log(
+    '%c::',
+    'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
+    formsData,
+  );
 
   return (
     <>
@@ -108,14 +128,7 @@ const Home = ({ qty, isMobile, isDetailsStage, setIsDetailsStage }) => {
             />
           )}
 
-          {stage === 3 && (
-            <Result
-              title="from Ultraslan community"
-              date="2 September 2020"
-              beforeSubmit={restartDonation}
-              onSubmit={bindedSubmit}
-            />
-          )}
+          {stage === 3 && <Result beforeSubmit={restartDonation} onSubmit={bindedSubmit} />}
         </Form>
       </FormWrapper>
 
@@ -125,13 +138,16 @@ const Home = ({ qty, isMobile, isDetailsStage, setIsDetailsStage }) => {
   );
 };
 
-const mapStateToProps = ({ basic }) => ({
+const mapStateToProps = ({ basic, form }) => ({
   qty: basic.qty,
   isMobile: basic.isMobile,
   isDetailsStage: basic.isDetailsStage,
+  formsData: form.formsData,
 });
 
 const mapDispatchToProps = {
+  saveFormsData: saveFormsDataAction,
+  clearFormsData: clearFormsDataAction,
   setIsDetailsStage: setIsDetailsStageAction,
 };
 

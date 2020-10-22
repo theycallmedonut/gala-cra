@@ -5,7 +5,7 @@ import { minWidth } from '../../styles/mixins';
 
 // Images
 import trophiesMobile from '../../images/trophies-mobile.svg';
-import trophiesDesktop from '../../images/trophies-desktop.svg';
+import trophiesDesktop from '../../images/trophies-desktop.png';
 
 export const LayoutWrapper = styled.div`
   position: relative;

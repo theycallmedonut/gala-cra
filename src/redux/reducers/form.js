@@ -1,4 +1,11 @@
-import { FAILURE_FETCH_FORM, START_FETCH_FORM, SUCCESS_FETCH_FORM } from '../types';
+import {
+  FAILURE_FETCH_FORM,
+  START_FETCH_FORM,
+  SUCCESS_CLEAR_FORMS_DATA,
+  SUCCESS_FETCH_FORM,
+  SUCCESS_SAVE_FORMS_DATA,
+} from '../types';
+import { mustBeFilled } from '../../components/Form/utils/validationRules';
 
 const initialState = {
   isLoading: false,
@@ -6,6 +13,7 @@ const initialState = {
   qty: {},
   payment: {},
   contact: {},
+  formsData: {},
 };
 
 export default function form(state = initialState, action = {}) {
@@ -24,6 +32,21 @@ export default function form(state = initialState, action = {}) {
           ...action.payload,
         },
         isLoading: false,
+      };
+
+    case SUCCESS_SAVE_FORMS_DATA:
+      return {
+        ...state,
+        formsData: {
+          ...state.formsData,
+          ...action.payload,
+        },
+      };
+
+    case SUCCESS_CLEAR_FORMS_DATA:
+      return {
+        ...state,
+        formsData: {},
       };
 
     default:

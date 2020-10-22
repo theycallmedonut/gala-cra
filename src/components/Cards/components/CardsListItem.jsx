@@ -14,7 +14,8 @@ const CardsListItem = ({ title, date, qty }) => {
     <CardsListItemWrapper>
       <CardWrapper>
         <CardType>{PREMIUM_MEMBER}</CardType>
-        <CardQty>{qty}</CardQty>
+        {/* <CardQty>{qty}</CardQty> */}
+        <CardQty>{Math.floor(Math.random() * (60 - 5) + 5)}</CardQty>
         <CardMonth>{qty === 1 ? MONTH : MONTHS}</CardMonth>
       </CardWrapper>
       <CardGoldLabel title={title} date={date} />

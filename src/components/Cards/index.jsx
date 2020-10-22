@@ -1,8 +1,8 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
+import { connect } from 'react-redux';
 import { Tabs } from 'antd';
 import { CardsWrapper } from './styles';
 import CardsList from './components/CardsList';
-import { connect } from 'react-redux';
 import { fetchCardsAction } from '../../redux/actions/basic';
 
 const { TabPane } = Tabs;
