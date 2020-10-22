@@ -145,7 +145,8 @@ const useValidation = (submitAction, initialForm = {}, formData = {}) => {
     const typeToData = {
       [TYPE_DATEPICKER]: {
         name: select,
-        value: isUnixDate ? event.valueOf() : moment(event).format(),
+        // value: isUnixDate ? event.valueOf() : moment(event).format(),
+        value: '',
       },
       [TYPE_RADIO]: event.target,
       [TYPE_CHECKBOX]: event.target,
