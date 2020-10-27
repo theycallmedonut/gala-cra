@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { withTranslation } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Tabs } from 'antd';
 import { CardsWrapper } from './styles';
@@ -7,7 +8,7 @@ import { fetchCardsAction } from '../../redux/actions/basic';
 
 const { TabPane } = Tabs;
 
-const Cards = ({ getCards, cards }) => {
+const Cards = ({ getCards, cards, t }) => {
   useEffect(() => {
     if (!cards.length) getCards();
   }, [cards]);
@@ -15,7 +16,7 @@ const Cards = ({ getCards, cards }) => {
   return (
     <CardsWrapper type="card">
       {cards.map((list) => (
-        <TabPane key={list.title} tab={list.title}>
+        <TabPane key={list.title} tab={t(list.title)}>
           <CardsList {...list} />
         </TabPane>
       ))}
@@ -31,4 +32,4 @@ const mapDispatchToProps = {
   getCards: fetchCardsAction,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Cards);
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(Cards));

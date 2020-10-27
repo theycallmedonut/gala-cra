@@ -4,23 +4,13 @@ import { Link } from 'react-router-dom';
 
 import { FormTitle } from '../../../styles/UI/form';
 import {
-  PLACEHOLDER_CARD_CODE,
-  PLACEHOLDER_ADDRESS,
   CARD_INFO,
-  PLACEHOLDER_CARD_MONTH,
-  PLACEHOLDER_CARD_NUMBER,
-  PLACEHOLDER_CARD_YEAR,
-  PLACEHOLDER_FIRST_NAME,
-  PLACEHOLDER_LAST_NAME,
-  PLACEHOLDER_EMAIL,
-  PLACEHOLDER_NATIONAL_ID,
   LABEL_RESIDENT,
   LABEL_CHECK_1_LINK,
   LABEL_CHECK_1_TEXT,
   LABEL_CHECK_2_LINK,
   LABEL_CHECK_2_TEXT,
   LABEL_CHECK_3_TEXT,
-  BUTTON_COMPLETE_DONATION,
 } from '../../../constants';
 import Input from '../components/Input';
 import Switch from '../components/Switch';
@@ -41,15 +31,16 @@ const Check2Label = () => (
 );
 
 const PaymentForm = ({
-  errors,
-  currentForm,
-  bindedSubmit,
   bindedInputFunctions,
   goToPrevStage,
+  bindedSubmit,
+  currentForm,
+  errors,
+  t,
 }) => {
   return (
     <>
-      <FormTitle style={{ textAlign: 'left', margin: '0 0 10px' }}>{CARD_INFO}</FormTitle>
+      <FormTitle style={{ textAlign: 'left', margin: '0 0 10px' }}>{t('CARD_INFO')}</FormTitle>
 
       {/* label: PERSON */}
 
@@ -57,7 +48,7 @@ const PaymentForm = ({
         <Input
           name="firstName"
           size="large"
-          placeholder={PLACEHOLDER_FIRST_NAME}
+          placeholder={t('PLACEHOLDER_FIRST_NAME')}
           defaultValue={currentForm.firstName}
           {...bindedInputFunctions}
         />
@@ -66,7 +57,7 @@ const PaymentForm = ({
         <Input
           name="lastName"
           size="large"
-          placeholder={PLACEHOLDER_LAST_NAME}
+          placeholder={t('PLACEHOLDER_LAST_NAME')}
           defaultValue={currentForm.lastName}
           {...bindedInputFunctions}
         />
@@ -78,7 +69,7 @@ const PaymentForm = ({
         <Input
           name="cardNumber"
           size="large"
-          placeholder={PLACEHOLDER_CARD_NUMBER}
+          placeholder={t('PLACEHOLDER_CARD_NUMBER')}
           defaultValue={currentForm.cardNumber}
           {...bindedInputFunctions}
         />
@@ -90,7 +81,7 @@ const PaymentForm = ({
             <Input
               name="cardMonth"
               size="large"
-              placeholder={PLACEHOLDER_CARD_MONTH}
+              placeholder={t('PLACEHOLDER_CARD_MONTH')}
               defaultValue={currentForm.cardMonth}
               {...bindedInputFunctions}
             />
@@ -101,7 +92,7 @@ const PaymentForm = ({
             <Input
               name="cardYear"
               size="large"
-              placeholder={PLACEHOLDER_CARD_YEAR}
+              placeholder={t('PLACEHOLDER_CARD_YEAR')}
               defaultValue={currentForm.cardYear}
               {...bindedInputFunctions}
             />
@@ -112,7 +103,7 @@ const PaymentForm = ({
             <Input
               name="card"
               size="large"
-              placeholder={PLACEHOLDER_CARD_CODE}
+              placeholder={t('PLACEHOLDER_CARD_CODE')}
               defaultValue={currentForm.card}
               {...bindedInputFunctions}
             />
@@ -126,7 +117,7 @@ const PaymentForm = ({
         <Input
           name="email"
           size="large"
-          placeholder={PLACEHOLDER_EMAIL}
+          placeholder={t('PLACEHOLDER_EMAIL')}
           defaultValue={currentForm.email}
           {...bindedInputFunctions}
         />
@@ -136,7 +127,7 @@ const PaymentForm = ({
         <Input
           name="address"
           size="large"
-          placeholder={PLACEHOLDER_ADDRESS}
+          placeholder={t('PLACEHOLDER_ADDRESS')}
           defaultValue={currentForm.address}
           {...bindedInputFunctions}
         />
@@ -157,7 +148,7 @@ const PaymentForm = ({
           <Input
             name="nationalId"
             size="large"
-            placeholder={PLACEHOLDER_NATIONAL_ID}
+            placeholder={t('PLACEHOLDER_NATIONAL_ID')}
             defaultValue={currentForm.nationalId}
             {...bindedInputFunctions}
           />
@@ -197,7 +188,7 @@ const PaymentForm = ({
       <ActionButtons
         onCancel={goToPrevStage}
         onSubmit={bindedSubmit}
-        submitTitle={BUTTON_COMPLETE_DONATION}
+        submitTitle={t('BUTTON_COMPLETE_DONATION')}
       />
     </>
   );

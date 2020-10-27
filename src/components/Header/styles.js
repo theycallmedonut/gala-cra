@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { colorWhite } from '../../styles/variables/colors';
+import { colorRed, colorWhite } from '../../styles/variables/colors';
 
 export const HeaderWrapper = styled.div`
   display: flex;
@@ -16,6 +16,26 @@ export const HeaderWrapper = styled.div`
 export const HeaderLogo = styled.img`
   width: 100px;
   margin: 40px auto 20px;
+`;
+
+export const HeaderLanguages = styled.div`
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  display: flex;
+
+  > * {
+    padding: 4px 8px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: capitalize;
+    cursor: pointer;
+    border-radius: 5px;
+
+    &:hover {
+      background: ${colorRed};
+      color: #fff;
+    }
+  }
 `;
 
 export const HeaderTitle = styled.div`

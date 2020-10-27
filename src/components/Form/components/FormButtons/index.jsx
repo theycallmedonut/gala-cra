@@ -1,14 +1,14 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 import { FormButtonsWrapper } from './styles';
-import { MONTHS, NEED_MORE } from '../../../../constants';
 import FormButtonsItem from './components/FormButtonsItem';
 
-const FormButtons = ({ bindedInputFunctions, current }) => {
+const FormButtons = ({ bindedInputFunctions, current, t }) => {
   const buttonsDetails = [
-    { qty: '5', text: MONTHS },
-    { qty: '10', text: MONTHS },
-    { qty: '100', text: MONTHS },
-    { qty: 'more', text: NEED_MORE },
+    { qty: '5', text: t('MONTHS') },
+    { qty: '10', text: t('MONTHS') },
+    { qty: '100', text: t('MONTHS') },
+    { qty: 'more', text: t('NEED_MORE') },
   ];
 
   return (
@@ -25,4 +25,4 @@ const FormButtons = ({ bindedInputFunctions, current }) => {
   );
 };
 
-export default FormButtons;
+export default withTranslation()(FormButtons);

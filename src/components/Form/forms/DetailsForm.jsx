@@ -1,5 +1,6 @@
 import React from 'react';
 import { bool, func } from 'prop-types';
+import { withTranslation } from 'react-i18next';
 import { Form } from 'antd';
 
 import { FormTitle } from '../../../styles/UI/form';
@@ -15,12 +16,13 @@ import Checkbox from '../components/Checkbox';
 import ActionButtons from '../components/ActionButtons';
 
 const DetailsForm = ({
-  errors,
-  currentForm,
-  bindedSubmit,
   bindedInputFunctions,
-  title,
+  bindedSubmit,
+  currentForm,
   onCancel,
+  errors,
+  title,
+  t,
 }) => {
   return (
     <>
@@ -29,7 +31,7 @@ const DetailsForm = ({
         <Input
           type="text"
           name="phone"
-          placeholder={PLACEHOLDER_PHONE}
+          placeholder={t('PLACEHOLDER_PHONE')}
           defaultValue={currentForm.phone}
           {...bindedInputFunctions}
         />
@@ -38,21 +40,21 @@ const DetailsForm = ({
         <Input
           type="text"
           name="name"
-          placeholder={PLACEHOLDER_NAME}
+          placeholder={t('PLACEHOLDER_NAME')}
           defaultValue={currentForm.name}
           {...bindedInputFunctions}
         />
       </Form.Item>
       <Form.Item {...errors.isAnonymous} label="">
         <Checkbox
-          label={STAGE_2_ANONYMOUS}
+          label={t('STAGE_2_ANONYMOUS')}
           name="isAnonymous"
           defaultChecked={currentForm.isAnonymous}
           {...bindedInputFunctions}
         />
       </Form.Item>
 
-      <ActionButtons onSubmit={bindedSubmit} submitTitle={BUTTON_SEND} onCancel={onCancel} />
+      <ActionButtons onSubmit={bindedSubmit} submitTitle={t('BUTTON_SEND')} onCancel={onCancel} />
     </>
   );
 };
@@ -63,4 +65,4 @@ DetailsForm.propTypes = {
   t: func,
 };
 
-export default DetailsForm;
+export default withTranslation()(DetailsForm);

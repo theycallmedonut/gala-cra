@@ -6,7 +6,7 @@ const mockFetch = (data, isFail) => {
 
 export const getCardsListApi = () => mockFetch(dummyCardsLists);
 
-export const getTotalMonthsApi = () => mockFetch(127680);
+export const getTotalMonthsApi = () => mockFetch('127.680');
 
 export const sendQtyFormApi = (data) => mockFetch(data);
 

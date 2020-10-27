@@ -62,8 +62,8 @@ export const FormTitle = styled.div`
   width: 230px;
 
   ${minWidth.tablet`
-    width: calc(100% + 60px);
-    margin: 0 -30px 10px;
+    width: calc(100% + 100px);
+    margin: 0 -50px 10px;
   `};
 `;
 

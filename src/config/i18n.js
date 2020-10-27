@@ -9,10 +9,10 @@ export const languagesList = {
     key: 'en',
     title: 'English',
   },
-  ru: {
-    shortCode: 'ru',
-    key: 'ru',
-    title: 'Русский',
+  tr: {
+    shortCode: 'tr',
+    key: 'tr',
+    title: 'Turkish',
   },
 };
 
@@ -32,15 +32,7 @@ i18n
     debug: false,
 
     detection: {
-      order: [
-        'localStorage',
-        'htmlTag',
-        'querystring',
-        'cookie',
-        'navigator',
-        'path',
-        'subdomain',
-      ],
+      order: ['localStorage', 'htmlTag', 'querystring', 'cookie', 'navigator', 'path', 'subdomain'],
     },
 
     react: {

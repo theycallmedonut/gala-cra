@@ -61,7 +61,7 @@ const Home = ({
   const [currentForm, setCurrentForm] = useState({});
 
   // Actions:
-  const goToStart = () => setStage(1);
+  const goToStart = () => setStage(2);
   const goToStage = (number) => setStage(number);
   const goToNextStage = () => setStage(stage + 1);
   const goToPrevStage = () => setStage(stage - 1);
@@ -103,12 +103,7 @@ const Home = ({
       >
         <Form>
           {stage === 1 && (
-            <QtyForm
-              title={STAGE_1_TITLE}
-              goToNextStage={goToNextStage}
-              goToPrevStage={goToPrevStage}
-              {...validation}
-            />
+            <QtyForm goToNextStage={goToNextStage} goToPrevStage={goToPrevStage} {...validation} />
           )}
 
           {(stage === 2 || stage === 4) && (

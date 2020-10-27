@@ -8,15 +8,6 @@ const GoldLabel = ({ formsData, className, style }) => {
   const currentDate = moment().format('D MMMM YYYY');
   const isDefinedUser = !!(!isAnonymous && (firstName || lastName));
 
-  console.log(
-    '%c::',
-    'background: #F2BE22; color: #333; border-radius: 5px; padding: 2px 5px;',
-    isDefinedUser,
-    isAnonymous,
-    firstName,
-    lastName,
-  );
-
   return (
     <GoldLabelWrapper className={className} style={style}>
       {isDefinedUser && <GoldLabelTitle>{`from ${firstName} ${lastName}`}</GoldLabelTitle>}

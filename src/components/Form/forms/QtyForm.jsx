@@ -1,14 +1,9 @@
 import React, { useCallback, useEffect } from 'react';
 import { Form } from 'antd';
 import { connect } from 'react-redux';
+import { withTranslation } from 'react-i18next';
 
 import { FormSubtitle, FormTitle } from '../../../styles/UI/form';
-import {
-  BUTTON_NEXT,
-  PLACEHOLDER_NEXT,
-  STAGE_1_FORM_SUBTITLE,
-  STAGE_2_TITLE,
-} from '../../../constants';
 import FormButtons from '../components/FormButtons';
 import { addLineBreaks } from '../../../utils/string';
 import Input from '../components/Input';
@@ -26,7 +21,7 @@ const QtyFrom = (props) => {
     currentForm,
     errors,
     setQty,
-    title,
+    t,
   } = props;
   const { qty } = currentForm;
   const isCustomQty = qty === 'more';
@@ -40,11 +35,11 @@ const QtyFrom = (props) => {
   useEffect(handleSetQty, [qty]);
 
   return isDetailsStage ? (
-    <DetailsForm title={STAGE_2_TITLE} onCancel={hideDetails} {...props} />
+    <DetailsForm title={t('STAGE_2_TITLE')} onCancel={hideDetails} {...props} />
   ) : (
     <>
-      <FormTitle>{addLineBreaks(title)}</FormTitle>
-      <FormSubtitle>{addLineBreaks(STAGE_1_FORM_SUBTITLE)}</FormSubtitle>
+      <FormTitle>{addLineBreaks(t('STAGE_1_TITLE'))}</FormTitle>
+      <FormSubtitle>{addLineBreaks(t('STAGE_1_FORM_SUBTITLE'))}</FormSubtitle>
       <FormButtons current={qty} bindedInputFunctions={bindedInputFunctions} />
 
       {!isCustomQty ? (
@@ -52,12 +47,16 @@ const QtyFrom = (props) => {
           <Form.Item {...errors.qty} label="">
             <Input
               name="qty"
-              placeholder={PLACEHOLDER_NEXT}
+              placeholder={t('PLACEHOLDER_NEXT')}
               value={currentForm.qty}
               {...bindedInputFunctions}
             />
           </Form.Item>
-          <ActionButtons onSubmit={showDetails} submitTitle={BUTTON_NEXT} style={{ margin: 0 }} />
+          <ActionButtons
+            onSubmit={showDetails}
+            submitTitle={t('BUTTON_NEXT')}
+            style={{ margin: 0 }}
+          />
         </>
       ) : (
         <ContactForm afterSubmitAction={goToNextStage} {...props} />
@@ -77,4 +76,4 @@ const mapDispatchToProps = {
   setIsDetailsStage: setIsDetailsStageAction,
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(QtyFrom);
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(QtyFrom));
