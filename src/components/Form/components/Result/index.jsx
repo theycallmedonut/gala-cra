@@ -1,12 +1,12 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 import GoldLabel from '../../../GoldLabel';
-import { BUTTON_AGAIN, RESULT_SUCCESS_MESSAGE, RESULT_TITLE } from '../../../../constants';
 import { ResultMessage, ResultTitle } from './styles';
 import { addLineBreaks } from '../../../../utils/string';
 import ActionButtons from '../ActionButtons';
 
-const Result = ({ onSubmit, beforeSubmit }) => {
+const Result = ({ onSubmit, beforeSubmit, t }) => {
   const handleSubmit = () => {
     beforeSubmit();
     onSubmit();
@@ -14,12 +14,12 @@ const Result = ({ onSubmit, beforeSubmit }) => {
 
   return (
     <>
-      <ResultTitle>{RESULT_TITLE}</ResultTitle>
+      <ResultTitle>{t('RESULT_TITLE')}</ResultTitle>
       <GoldLabel style={{ margin: '0 auto' }} />
-      <ResultMessage>{addLineBreaks(RESULT_SUCCESS_MESSAGE)}</ResultMessage>
-      <ActionButtons onSubmit={handleSubmit} submitTitle={BUTTON_AGAIN} />
+      <ResultMessage>{addLineBreaks(t('RESULT_SUCCESS_MESSAGE'))}</ResultMessage>
+      <ActionButtons onSubmit={handleSubmit} submitTitle={t('BUTTON_AGAIN')} />
     </>
   );
 };
 
-export default Result;
+export default withTranslation()(Result);

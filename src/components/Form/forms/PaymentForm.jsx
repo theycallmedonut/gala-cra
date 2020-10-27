@@ -1,10 +1,10 @@
 import React from 'react';
 import { Form, Row, Col } from 'antd';
 import { Link } from 'react-router-dom';
+import { withTranslation } from 'react-i18next';
 
 import { FormTitle } from '../../../styles/UI/form';
 import {
-  CARD_INFO,
   LABEL_RESIDENT,
   LABEL_CHECK_1_LINK,
   LABEL_CHECK_1_TEXT,
@@ -137,7 +137,7 @@ const PaymentForm = ({
         <Switch
           name="isResident"
           size="large"
-          label={LABEL_RESIDENT}
+          label={t('LABEL_RESIDENT')}
           checked={currentForm.isResident}
           {...bindedInputFunctions}
         />
@@ -194,4 +194,4 @@ const PaymentForm = ({
   );
 };
 
-export default PaymentForm;
+export default withTranslation()(PaymentForm);

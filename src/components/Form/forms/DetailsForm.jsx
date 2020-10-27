@@ -4,12 +4,6 @@ import { withTranslation } from 'react-i18next';
 import { Form } from 'antd';
 
 import { FormTitle } from '../../../styles/UI/form';
-import {
-  BUTTON_SEND,
-  PLACEHOLDER_NAME,
-  PLACEHOLDER_PHONE,
-  STAGE_2_ANONYMOUS,
-} from '../../../constants';
 import { addLineBreaks } from '../../../utils/string';
 import Input from '../components/Input';
 import Checkbox from '../components/Checkbox';

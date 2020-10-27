@@ -3,9 +3,6 @@ import { withRouter } from 'react-router-dom';
 import { Form } from 'antd';
 import { connect } from 'react-redux';
 
-// Constants
-import { STAGE_1_TITLE } from '../../constants';
-
 // Actions
 import { sendContactFormApi, sendPaymentFormApi, sendQtyFormApi } from '../../api';
 
@@ -61,7 +58,7 @@ const Home = ({
   const [currentForm, setCurrentForm] = useState({});
 
   // Actions:
-  const goToStart = () => setStage(2);
+  const goToStart = () => setStage(1);
   const goToStage = (number) => setStage(number);
   const goToNextStage = () => setStage(stage + 1);
   const goToPrevStage = () => setStage(stage - 1);

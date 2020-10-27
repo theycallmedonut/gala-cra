@@ -1,4 +1,5 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
 // Constants
 import { CARD, CONTACT_ME, PAYMENT_TITLE } from '../../../../constants';
@@ -10,18 +11,18 @@ import { TabsItem, TabsWrapper } from '../../../../styles/UI/tabs';
 import ContactForm from '../../../../components/Form/forms/ContactForm';
 
 const Payment = (props) => {
-  const { stage, goToStage } = props;
+  const { stage, goToStage, t } = props;
 
   const handleChange = (key) => goToStage(Number(key));
 
   return (
     <>
-      <FormTitle>{PAYMENT_TITLE}</FormTitle>
+      <FormTitle>{t('PAYMENT_TITLE')}</FormTitle>
       <TabsWrapper defaultActiveKey={stage} onChange={handleChange} style={{ marginTop: '30px' }}>
-        <TabsItem tab={CARD} key={2}>
+        <TabsItem tab={t('CARD')} key={2}>
           <PaymentForm {...props} />
         </TabsItem>
-        <TabsItem tab={CONTACT_ME} key={4}>
+        <TabsItem tab={t('CONTACT_ME')} key={4}>
           <ContactForm {...props} />
         </TabsItem>
       </TabsWrapper>
@@ -29,4 +30,4 @@ const Payment = (props) => {
   );
 };
 
-export default Payment;
+export default withTranslation()(Payment);

@@ -1,9 +1,9 @@
 import React from 'react';
+import { withTranslation } from 'react-i18next';
 
-import { BUTTON_BACK } from '../../../../constants';
 import { ActionButtonsCancel, ActionButtonsSubmit, ActionButtonsWrapper } from './styles';
 
-const ActionButtons = ({ onSubmit, onCancel, submitTitle = 'send', style = {} }) => {
+const ActionButtons = ({ onSubmit, onCancel, submitTitle = 'send', style = {}, t }) => {
   return (
     <ActionButtonsWrapper style={style}>
       <ActionButtonsSubmit type="primary" onClick={onSubmit}>
@@ -11,11 +11,11 @@ const ActionButtons = ({ onSubmit, onCancel, submitTitle = 'send', style = {} })
       </ActionButtonsSubmit>
       {onCancel && (
         <ActionButtonsCancel style={{ marginTop: '12px' }} onClick={onCancel}>
-          {BUTTON_BACK}
+          {t('BUTTON_BACK')}
         </ActionButtonsCancel>
       )}
     </ActionButtonsWrapper>
   );
 };
 
-export default ActionButtons;
+export default withTranslation()(ActionButtons);
